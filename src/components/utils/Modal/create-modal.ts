@@ -1,12 +1,13 @@
 // import { clearAllBodyScrollLocks, disableBodyScroll } from "body-scroll-lock";
 import { createFocusTrap, FocusTrap } from "focus-trap";
-import {
+import * as pkg from "scroll-lock";
+const {
   addScrollableSelector,
   clearQueueScrollLocks,
   disablePageScroll,
   enablePageScroll,
   removeScrollableSelector,
-} from "scroll-lock";
+} = pkg;
 import { JSX, onCleanup, onMount } from "solid-js";
 
 import { chainHandlers } from "./utils";
