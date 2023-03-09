@@ -1,0 +1,184 @@
+/* -------------------------------------------------------------------------------------------------
+ * Modal - solid-transition-group classes
+ * -----------------------------------------------------------------------------------------------*/
+.modal-fade-transition-enter,
+.modal-fade-transition-exit-to {
+  opacity: 0;
+}
+
+.modal-fade-transition-enter-to,
+.modal-fade-transition-exit {
+  opacity: 1;
+}
+
+.modal-fade-transition-enter-active {
+  transition: opacity 300ms ease-out;
+}
+
+.modal-fade-transition-exit-active {
+  transition: opacity 200ms ease-in;
+}
+
+.modal-fade-in-bottom-transition-enter,
+.modal-fade-in-bottom-transition-exit-to {
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.modal-fade-in-bottom-transition-enter-to,
+.modal-fade-in-bottom-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hope-modal-fade-in-bottom-transition-enter-active {
+  transition-property: opacity transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+.hope-modal-fade-in-bottom-transition-exit-active {
+  transition-property: opacity transform;
+  transition-duration: 000ms;
+  transition-timing-function: ease-in;
+}
+
+.modal-scale-transition-enter,
+.modal-scale-transition-exit-to {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.modal-scale-transition-enter-to,
+.modal-scale-transition-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-scale-transition-enter-active {
+  transition-property: opacity transform;
+  transition-duration: 300ms;
+  transition-timing-function: ease-out;
+}
+
+.modal-scale-transition-exit-active {
+  transition-property: opacity transform;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in;
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * Modal - overlay
+ * ---
+ */
+.modal-overlay {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vw;
+  background-color: hsl(0, 0%, 0% / 65%) black;
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * Modal - container
+ * -----------------------------------------------------------------------------------------------*/
+.modal-container {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  scroll-behavior: smooth;
+  overflow: auto;
+
+  width: 100vw;
+  height: 100vw;
+
+  @supports(height: -webkit-fill-available) {
+    height: -webkit-fill-available;
+  }
+
+  outline: none;
+}
+
+.modal-container:focus {
+  outline: none;
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * Modal - dialog (content)
+ * -----------------------------------------------------------------------------------------------*/
+.dialog {
+  z-index: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 3.75rem;
+  margin-left: 3.75rem;
+  width: 100%;
+  border-radius: 0.75rem;
+  outline: none;
+  box-shadow: gray;
+  background-color: azure;
+  color: inherit;
+}
+
+.dialog:focus {
+  outline: none;
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * Modal - header
+ * -----------------------------------------------------------------------------------------------*/
+
+.modal-header {
+  display: flex;
+  padding-top: 0.5rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.3rem;
+  padding-left: 0.5rem;
+  font-size: large;
+  font-weight: 500;
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * Modal - body
+ * -----------------------------------------------------------------------------------------------*/
+
+.modal-body {
+  display: flex;
+  padding-top: 0.2rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.2rem;
+  padding-left: 0.5rem;
+  overflow: auto;
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * Modal - footer
+ * -----------------------------------------------------------------------------------------------*/
+
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 0.3rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* -------------------------------------------------------------------------------------------------
+ * Modal - close button
+ * -----------------------------------------------------------------------------------------------*/
+
+.modal-close {
+  position: absolute;
+  top: 4rem;
+  inset-inline-end: 4rem;
+}

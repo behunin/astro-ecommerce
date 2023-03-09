@@ -1,0 +1,76 @@
+.CollapseTransition {
+    transition: height 300ms cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.Wrapper {
+    display: flex;
+    place-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.CollapseContainer {
+    width: 100%;
+    border: 1px solid purple;
+    border-radius: 10px;
+    background-color: purple;
+}
+
+.CollapseHeader {
+    gap: 10px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    width: 100%;
+    color: black;
+    margin: 0;
+    cursor: pointer;
+    text-align: inherit;
+    padding: 15px;
+    transition: box-shadow 200ms ease-out;
+    border-radius: 10px;
+    box-shadow: 0 0 0 3px grey;
+}
+
+.CollapseHeader:focus-visible {
+    outline: 1px solid gray;
+    box-shadow: 0 0 0 4px gray;
+    border: 2px solid purple;
+    border-radius: 10px;
+}
+
+.CollapseHeaderActive:hover {
+    box-shadow: 0 0 0 3px blue;
+}
+
+.CollapseContent {
+    color: black;
+    padding: 10px 15px 15px 15px;
+    line-height: 1.75;
+    display: block;
+}
+
+.ChevronButton svg {
+    transform: rotate(0deg);
+    stroke: gray;
+}
+
+.ChevronButton:hover {
+    background-color: blue;
+}
+
+.ActiveChevron {
+    background-color: gray;
+    border: 1px solid gray;
+}
+
+.ActiveChevron svg {
+    transform: rotate(180deg);
+}

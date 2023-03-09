@@ -1,0 +1,40 @@
+details[open]>div {
+    animation: 600ms 1 normal slide;
+}
+
+@keyframes slide {
+    from {
+        height: 0%;
+        opacity: 0;
+    }
+
+    to {
+        height: max-content;
+        opacity: 1;
+    }
+}
+
+summary.sb-accordion-header {
+    border-bottom: 1px solid gray;
+    clear: right;
+    cursor: pointer;
+    list-style: none;
+}
+
+summary.sb-accordion-header:before {
+    box-sizing: content-box;
+    content: url("../ChevronIcon.svg");
+    float: right;
+    height: 0.75em;
+    overflow: hidden;
+    padding: 0 0.5em 0.5em 0;
+    text-align: right;
+    transform: rotateX(180deg);
+    transition: transform 0.25s linear;
+    width: 0.75em;
+    rotate: 180deg;
+}
+
+details.sb-accordion[open]>summary.sb-accordion-header:before {
+    transform: rotateX(0deg);
+}

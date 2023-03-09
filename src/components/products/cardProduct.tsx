@@ -4,11 +4,11 @@ interface Props {
   thumb_src: string;
   thumb_alt: string;
   title: string;
-  description: string;
+  description?: string;
   price: number;
-  color: string;
-  colors: string[];
-  position: string;
+  color?: string;
+  colors?: string[];
+  position?: string;
 }
 
 export default function CardProduct({
@@ -22,45 +22,39 @@ export default function CardProduct({
   position
 }: Props) {
 
-  const classList = "card-body " + "text-" + position;
-
   return (
-    <>
-      <div className="card card-product border border-white mb-5 shadow-xs">
-        <a href="#">
-          <div className="height-300">
-            <img className="w-100 h-100 rounded-top" src={thumb_src} alt={thumb_alt} />
-          </div>
-          <div className={classList}>
-            {(color) && 
-              <p className="text-sm mb-1 text-body">{color}</p>
-            }
-            {(title) && 
-              <h5 className="font-weight-bold">
-                {title}
-              </h5>
-            }
+    <div class="shadow-md border rounded mb-5 max-w-xs">
+      <a href="#">
+        <img class="aspect-square max-h-80 rounded object-cover" src={thumb_src} alt={thumb_alt} />
+        <div class="grid grid-flow-row items-center justify-center text-center">
+          {(color) &&
+            <p class="text-sm mb-1 text-gray-500">{color}</p>
+          }
+          {(title) &&
+            <h5 class="font-bold">
+              {title}
+            </h5>
+          }
 
-            {(description) && 
-              <p className="text-body text-sm">{description}</p>
-            }
-           
-            {(price) && 
-              <p className="mb-0 text-sm text-body mt-1 mb-3">
-                ${price.toFixed(2)}
-              </p>
-            }
-           
-            {(colors) &&
-              <ProductBadge colors={colors} />
-            }
+          {(description) &&
+            <p class="text-gray-800 text-sm w-4/5 text-center">{description}</p>
+          }
 
-            {!(description || colors || color) &&
-              <a href="#" className="font-weight-normal text-body text-sm">Shop Now</a>
-            }
-          </div>
-        </a>
-      </div>
-    </>
+          {(price) &&
+            <p class="text-sm text-gray-500 mt-1 mb-3">
+              ${price.toFixed(2)}
+            </p>
+          }
+
+          {(colors) &&
+            <ProductBadge colors={colors} />
+          }
+
+          {!(description || colors || color) &&
+            <a href="#" class="font-normal text-gray-800 text-sm">Shop Now</a>
+          }
+        </div>
+      </a>
+    </div>
   );
 };

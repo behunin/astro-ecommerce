@@ -1,17 +1,17 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { DependencyList, useEffect, useRef } from 'react';
+import { createEffect, createSignal } from 'solid-js';
 
 export const useEffectOnlyOnUpdate = (
-  callback: (deps: DependencyList) => void,
-  dependencies: DependencyList
+  callback: (deps: any[]) => void,
+  dependencies: any[]
 ) => {
-  const didMount = useRef(false);
+  const [didMount, setDidMount] = createSignal(false);
 
-  useEffect(() => {
-    if (didMount.current) {
+  createEffect(() => {
+    if (didMount()) {
       callback(dependencies);
     } else {
-      didMount.current = true;
+      setDidMount(true);
     }
   }, dependencies);
 };

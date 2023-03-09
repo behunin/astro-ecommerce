@@ -1,3 +1,5 @@
+import { createSignal } from 'solid-js';
+import { Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from '../utils/Modal';
 import ProductBadge from './productBadge';
 import ProductRating from './productRating';
 import ProductSizes from './productSizes';
@@ -23,92 +25,97 @@ export default function ProductQuickview({
   stock
 }: Props) {
 
+  const [opened, setOpen] = createSignal(false);
+
   return (
-    <>
-    <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-      Product Quickview2
-    </button>
-    <div className="modal fade" id="exampleModal2" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div className="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div className="modal-content">
-          <div className="card card-product">
-            <div className="card-body d-block d-lg-flex p-4">
-              <button type="button" className="btn-close text-dark position-absolute end-0 me-4" data-bs-dismiss="modal" aria-label="Close"></button>
-              <div className="w-70 w-md-60 w-lg-30 text-center">
-                {(thumb_src) && 
-                <img className="w-100 rounded-3 shadow-xs border mb-4" src={thumb_src} />
+    <div>
+      <button class="border rounded-xl w-40 h-12 bg-gray-800 text-white" onClick={() => setOpen(true)}>
+        Product Quickview2
+      </button>
+      <Modal opened={opened()} onClose={() => setOpen(false)} id="exampleModal2" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <ModalOverlay />
+        <ModalContent >
+          <ModalCloseButton />
+          <ModalBody class="grid grid-flow-row md:grid-flow-col items-center justify-center w-full gap-3 lg:w-70 mt-5 lg:mt-0">
+            <div class='grid items-center justify-center mt-4'>
+              {(thumb_src) &&
+                <img class="object-cover rounded shadow-sm border mb-4 w-20" src={thumb_src} />
+              }
+              <a class="text-blue-600 mb-4" href="#">View full details</a>
+            </div>
+
+            <div class='grid grid-flow-row items-center justify-center'>
+              <ModalHeader>
+                {(title.length != 0) &&
+                  <h4 class="mb-3"><b>{title}</b></h4>
                 }
-                <a className="text-primary" href="#">View full details</a>
-              </div>
-              <div className="w-100 w-lg-70 ps-4 mt-5 mt-lg-0">
-                <div className="d-flex justify-content-between">
-                  {(title.length != 0) && 
-                    <h4 className="mb-3">{title}</h4>
-                  }
-                </div>
-                {(price) && 
-                  <>
-                    <div className="d-flex mb-3">
-                      <h5 className="mb-0 pe-3">${price.toFixed(2)}</h5>
-                      <div className="d-flex align-items-center border-start ps-3">
-                      {(rating != 0) && 
+              </ModalHeader>
+              {(price) &&
+                <div>
+                  <div class="flex mb-3">
+                    <h5 class="mb-0 p-3 border-r"><b>${price.toFixed(2)}</b></h5>
+                    <div class="flex items-center px-3">
+                      {(rating != 0) &&
                         <ProductRating rating={rating} reviews={reviews} />
                       }
-                      </div>
-                      <input className="opacity-0" defaultValue={price} />
                     </div>
-                  </>
-                }
-                
-                {(stock) ? 
-                  <div className="d-flex align-items-center">
-                    <i className="fas fa-check text-lg text-success"></i>
-                    <p className="mb-0 ms-2 text-sm">In Stock</p>
-                  </div>
-                  :
-                  <div className="d-flex align-items-center">
-                    <i className="fas fa-minus-circle text-lg"></i>
-                    <p className="mb-0 ms-2 text-sm">Out of Stock</p>
-                  </div>
-                }
-                
-                <h6 className="mt-4">Size:</h6>
-                <div className="row mb-2">
-                  <div className="col-6">
-                    <div className="form-check">
-                      <input className="form-check-input rounded-2" type="radio" name="flexRadioDefault" id="18l" />
-                      <label className="cursor-pointer label-lg" htmlFor="18l">
-                        <h6>18L</h6>
-                        <p className="mb-0">Perfect for a reasonable amount of snacks.</p>
-                      </label>
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <div className="form-check">
-                      <input className="form-check-input rounded-2" type="radio" name="flexRadioDefault" id="20l" />
-                      <label className="cursor-pointer label-lg" htmlFor="20l">
-                        <h6>20L</h6>
-                        <p className="mb-0">Enough room for a serious amount of snacks.</p>
-                      </label>
-                    </div>
+                    <input class="hidden" value={price} />
                   </div>
                 </div>
+              }
 
-                <p>What size should I buy? <span data-bs-toggle="tooltip" data-bs-placement="top" title="More information related to sizes" data-container="body" data-animation="true"><i className="fas fa-question-circle ms-1"></i></span></p>
-              
-                <div className="d-block text-center">
-                  <button className="btn btn-primary btn-lg w-100">Add to Bag</button>
-                  <p className="mb-0 d-inline text-xl">
-                    <i className="fas fa-shield-alt me-2"></i>
-                    Lifetime Guarantee
-                  </p>
+              {(stock) ?
+                <div class="flex items-center mx-2">
+                  <i class="fas fa-check text-lg text-green-300"></i>
+                  <p class="mb-0 mx-2 text-sm">In Stock</p>
+                </div>
+                :
+                <div class="flex items-center text-gray-500 mx-2">
+                  <i class="fas fa-minus-circle text-lg"></i>
+                  <p class="mb-0 mx-2 text-sm">Out of Stock</p>
+                </div>
+              }
+
+              <h6 class="mt-4 ml-3">Size:</h6>
+              <div class="grid grid-flow-col gap-3 mb-2">
+                <div>
+                  <div class="border rounded-xl px-3">
+                    <input class="hidden" type="radio" name="flexRadioDefault" id="18l" />
+                    <label class="cursor-pointer px-3" for="18l">
+                      <h6><b>18L</b></h6>
+                      <p>Perfect for a reasonable amount of snacks.</p>
+                    </label>
+                  </div>
+                </div>
+                <div>
+                  <div class="border rounded-xl px-3">
+                    <input class="hidden" type="radio" name="flexRadioDefault" id="20l" />
+                    <label class="cursor-pointer px-3 mx-3" for="20l">
+                      <h6><b>20L</b></h6>
+                      <p>Enough room for a serious amount of snacks.</p>
+                    </label>
+                  </div>
                 </div>
               </div>
+
+              <p class='my-4'>
+                What size should I buy?
+                <span data-bs-toggle="tooltip" data-bs-placement="top" title="More information related to sizes" data-container="body" data-animation="true">
+                  <i class="fas fa-question-circle mx-1"></i>
+                </span>
+              </p>
+
+              <div class="block text-center">
+                <button class="bg-blue-600 h-12 rounded-xl text-white font-bold w-full">Add to Bag</button>
+                <p class="mt-8 text-gray-500 text-xl">
+                  <i class="fas fa-shield-alt m-2"></i>
+                  Lifetime Guarantee
+                </p>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </div>
-    </>
   );
 };

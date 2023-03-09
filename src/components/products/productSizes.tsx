@@ -1,5 +1,5 @@
 interface Props {
-  sizes: Map<string,number>
+  sizes: object
 }
 
 export default function ProductSizes({
@@ -10,25 +10,22 @@ export default function ProductSizes({
 
   return (
     <>
-      <div className="mt-4 d-flex justify-content-between align-items-center">
-        <h6 className="mb-0">Size:</h6>
-        <a href="#" className="text-primary mb-0">Size guide</a>
+      <div class="mt-4 flex justify-between items-center">
+        <h6 class="mb-0"><b>Size:</b></h6>
+        <a href="#" class="text-blue-600 mb-0">Size guide</a>
       </div>
-      <div className="d-flex flex-wrap text-center my-4">
-        {Object.entries(sizes).map(([size, amount], i) => 
-
-        <div className="mb-3 me-3">
-          <div className="form-check">
+      <select class="form-select w-full h-12 my-4 rounded-md">
+        <option value="">Please Select a Size</option>
+        {Object.entries(sizes).map(([size, amount], i) =>
+          <>
             {(amount != 0) ?
-              <input className="form-check-input rounded-2" type="radio" name="flexRadioDefault" id={`input`+ sizeID + i} />
-            : 
-              <input className="form-check-input rounded-2" disabled type="radio" name="flexRadioDefault" id={`input`+ sizeID + i} />
-            } 
-            <label className="cursor-pointer" htmlFor={`input`+ sizeID + i}>{size}</label>
-          </div>
-        </div>
+              <option value={size}>{size}</option>
+              :
+              <option disabled value={size}>{size}</option>
+            }
+          </>
         )}
-      </div>
+      </select>
     </>
   );
 }

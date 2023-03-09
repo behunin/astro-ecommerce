@@ -8,9 +8,9 @@ export default function OrderSummary({
 
   return (
     <>
-      <div className="form-check">
-        <input className="form-check-input" type="checkbox" value="" checked />
-        <label className="custom-control-label">Same as shipping information</label>
+      <div class="flex flex-row gap-3">
+        <input class="form-input" type="checkbox" value="" checked />
+        <label class="text-slate-500">Same as shipping information</label>
       </div>
     </>
   );

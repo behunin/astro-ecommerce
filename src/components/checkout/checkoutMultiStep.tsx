@@ -4,6 +4,7 @@ import BillingInfo from './billingInfo';
 import OrderSummary from '../cart/orderSummary';
 import CheckoutSingleItemDark from '../checkout/checkoutSingleItemDark';
 import ReviewRating from '../reviews/reviewRating';
+import { Accordion, AccordionGroup, AccordionHeader } from '../utils/Accordian/Accordian';
 
 interface Props {
   products: ({
@@ -25,116 +26,107 @@ export default function CheckoutSummary({
 }: Props) {
 
   let subtotalCheckout = 0;
-  products.map(product => 
+  products.map(product =>
     subtotalCheckout += product.price
   )
 
   return (
-    <>
-      <section>
-        <div className="row">
-          <div className="col-12 col-lg-6 p-lg-5">
-            <small className="text-white opacity-6">Amount due</small>
-            <h3 className="text-white">${subtotalCheckout.toFixed(2)}</h3>
-            {products.map((product, i) => 
-                <CheckoutSingleItemDark
-                  thumb_src={product.thumb_src}
-                  thumb_alt={product.thumb_alt}
-                  title={product.title}
-                  color={product.color}
-                  size={product.size}
-                  price={product.price}
-                />
-            )}
-            <OrderSummary subtotal={subtotalCheckout}/>
+    <section>
+      <div class="grid  grid-flow-row md:grid-cols-4 gap-3">
+        <div class="grid grid-flow-row gap-4 col-span-2">
+          <small class="text-white opacity-60">Amount due</small>
+          <h3 class="text-white">${subtotalCheckout.toFixed(2)}</h3>
+          {products.map((product, i) =>
+            <CheckoutSingleItemDark
+              thumb_src={product.thumb_src}
+              thumb_alt={product.thumb_alt}
+              title={product.title}
+              color={product.color}
+              size={product.size}
+              price={product.price}
+            />
+          )}
+          <OrderSummary subtotal={subtotalCheckout} />
+        </div>
+        <div class="grid grid-flow-row p-3 md:p-5 col-span-2">
+          <button class="border rounded-xl w-full h-12 text-white bg-slate-800">
+            <i class="fab fa-apple m-2"></i>
+            Pay
+          </button>
+          <div class="mt-2 mb-4 relative text-center">
+            <hr />
+            <span class='absolute -top-[0.80rem] bg-white px-3'>or</span>
           </div>
-          <div className="col-12 col-lg-6 p-3 p-md-5">
-            <button className="btn btn-dark btn-lg w-100">
-              <i className="fab fa-apple me-2"></i>
-              Pay
-            </button>
-            <div className="mt-2 mb-4 position-relative text-center">
-              <p className="text-sm font-weight-bold mb-2 text-secondary text-border d-inline z-index-2 bg-white px-3">or</p>
-            </div>
-            <h5 className="mb-4">Contact information</h5>
-            <div className="form-group">
-              <label>Email address</label>
-              <input type="email" className="form-control" placeholder="name@example.com" />
-            </div>
-            <div className="form-group">
-              <label>Phone number</label>
-              <input type="text" className="form-control" placeholder="Your Phone number" />
-            </div>
-            <div className="form-check">
-              <input className="form-check-input" type="checkbox" value="" checked />
-              <label className="custom-control-label">I have read the terms and conditions and agree to the sale of my personal information to the highest bidder.</label>
-            </div>
-            <button className="btn btn-lg btn-light w-100 mt-4" disabled>Continue</button>
+          <h5 class="mb-4 font-bold text-2xl">Contact information</h5>
+          <div class="flex flex-col gap-1">
+            <label>Email address</label>
+            <input type="email" class="border rounded h-10 placeholder:pl-3" placeholder="name@example.com" />
+          </div>
+          <div class="flex flex-col gap-1">
+            <label>Phone number</label>
+            <input type="text" class="border rounded h-10 placeholder:pl-3" placeholder="Your Phone number" />
+          </div>
+          <div class="flex flex-row gap-1">
+            <input class="w-6" type="checkbox" value="" checked />
+            <label class="custom-control-label">I have read the terms and conditions and agree to the sale of my personal information to the highest bidder.</label>
+          </div>
+          <button class="border rounded-xl bg-slate-500 w-full h-12 mt-4" disabled>Continue</button>
 
-            <div className="accordion">
-              <div className="accordion" id="accordionRental">
-                <div className="accordion-item mb-3">
-                  <h5 className="accordion-header" id="headingOne">
-                    <button className="accordion-button border-bottom font-weight-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                      Payment details
-                      <i className="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i>
-                      <i className="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i>
-                    </button>
-                  </h5>
-                  <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionRental">
-                    <div className="accordion-body text-sm opacity-8">
-                      <PaymentDetails />
-                    </div>
-                  </div>
-                </div>
-                <div className="accordion-item mb-3">
-                  <h5 className="accordion-header" id="headingTwo">
-                    <button className="accordion-button border-bottom font-weight-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Shipping Info
-                      <i className="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i>
-                      <i className="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i>
-                    </button>
-                  </h5>
-                  <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionRental">
-                    <div className="accordion-body text-sm opacity-8">
-                      <ShippingInfo />
-                    </div>
-                  </div>
-                </div>
-                <div className="accordion-item mb-3">
-                  <h5 className="accordion-header" id="headingThree">
-                    <button className="accordion-button border-bottom font-weight-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Billing address
-                      <i className="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i>
-                      <i className="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i>
-                    </button>
-                  </h5>
-                  <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionRental">
-                    <div className="accordion-body text-sm opacity-8">
-                      <BillingInfo />
-                    </div>
-                  </div>
-                </div>
-                <div className="accordion-item mb-3">
-                  <h5 className="accordion-header" id="headingFour">
-                    <button className="accordion-button border-bottom font-weight-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      Review
-                      <i className="collapse-close fa fa-plus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i>
-                      <i className="collapse-open fa fa-minus text-xs pt-1 position-absolute end-0 me-3" aria-hidden="true"></i>
-                    </button>
-                  </h5>
-                  <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionRental">
-                    <div className="accordion-body text-sm opacity-8">
-                      <ReviewRating />
-                    </div>
+          <AccordionGroup allowMultiple={true} allowToggle={true}>
+            <Accordion>
+              <AccordionHeader>
+                <h5 class='text-xl my-3' id="headingOne">
+                  Payment Details
+                </h5>
+              </AccordionHeader>
+              <div class="mb-3">
+                <div id="collapseOne" aria-labelledby="headingOne">
+                  <div class="text-sm opacity-80">
+                    <PaymentDetails />
                   </div>
                 </div>
               </div>
-            </div>            
-          </div>
+            </Accordion>
+            <Accordion>
+              <AccordionHeader>
+                <h5 class='text-xl my-3' id="headingTwo">
+                  Shipping Info
+                </h5>
+              </AccordionHeader>
+              <div id="collapseTwo" aria-labelledby="headingTwo">
+                <div class="text-sm opacity-80">
+                  <ShippingInfo title='TODO' />
+                </div>
+              </div>
+            </Accordion>
+            <Accordion>
+              <AccordionHeader>
+                <h5 class='text-xl my-3' id="headingThree">
+                  Billing address
+                </h5>
+              </AccordionHeader>
+              <div id="collapseThree" aria-labelledby="headingThree">
+                <div class="text-sm opacity-80">
+                  <BillingInfo title='TODO' />
+                </div>
+              </div>
+            </Accordion>
+            <Accordion>
+              <AccordionHeader>
+                <h5 class='text-xl my-3' id="headingFour">
+                  Review
+                </h5>
+              </AccordionHeader>
+              <div id="collapseFour" aria-labelledby="headingFour">
+                <div class="text-sm opacity-80">
+                  <ReviewRating rating={3} />
+                </div>
+              </div>
+            </Accordion>
+          </AccordionGroup>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

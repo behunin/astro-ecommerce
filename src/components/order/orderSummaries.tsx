@@ -1,10 +1,11 @@
+import { For } from 'solid-js';
 import OrderCardProduct from './orderCardProduct';
 import OrderSummary from '../cart/orderSummary';
 
 interface Props {
   order: {
-    orderNumber: string,
-    products: 
+    orderNumber: number,
+    products:
     {
       id: string,
       status: string,
@@ -34,9 +35,9 @@ export default function OrderSummaries({
   products
 }: Props) {
 
-  let orderCards = [];
+  let orderCards: any[] = [];
 
-   products.map(product => {  
+  products.map(product => {
     let status = "";
     let orderQuantity = 0;
 
@@ -47,59 +48,58 @@ export default function OrderSummaries({
       }
     })
     orderCards.push(
-      <OrderCardProduct 
-        product={product} 
+      <OrderCardProduct
+        product={product}
         status={status}
         quantity={orderQuantity}
-        address={order.address} 
-        email={order.email} 
-        phoneNumber={order.phoneNumber} 
-      /> 
+        address={order.address}
+        email={order.email}
+        phoneNumber={order.phoneNumber}
+      />
     )
   });
 
   let subtotal = 0;
-  products.map(product => 
+  products.map(product =>
     subtotal += product.price
   )
 
   return (
-    <>
-    <div className="p-3 p-md-5 bg-gray-100 rounded-2">
-      <div className="d-block d-md-flex justify-content-between mb-4"> 
-        <div className="d-block d-md-flex align-items-baseline">
-          <h3 className="mb-0 me-3">Order #{order.orderNumber}</h3>
-          <a className="text-sm text-primary" href="#">View invoice <i className="fas fa-long-arrow-right"></i></a>
+    <div class="grid grid-flow-row md:p-5 bg-gray-100 rounded-md shadow-md border">
+      <div class="block md:flex justify-between mb-4">
+        <div class="block md:flex items-baseline">
+          <h3 class="mb-0 m-3 text-3xl font-bold">Order #{order.orderNumber}</h3>
+          <a class="text-sm text-blue-600" href="#">View invoice <i class="fas fa-long-arrow-right"></i></a>
         </div>
-        <p className="mb-0 text-dark mt-4 mt-md-0">Order Placed <b>{order.date}</b></p>
+        <p class="mb-0 text-slate-800 mt-4 md:mt-0">Order Placed <b>{order.date}</b></p>
       </div>
 
       {orderCards}
 
-      <div className="row bg-gray-200 p-2 p-md-4 mx-1 rounded-2">
-        <div className="col-12 col-lg-3 mt-4 mt-md-0">
-          <h5 className="text-base">Billing Address</h5>
-          <p className="text-sm mb-0 opacity-8 pe-md-7">{order.address}</p>
+      <div class="grid grid-flow-row md:grid-flow-col bg-gray-200 md:p-4 rounded-sm">
+        <div class="mt-4 md:mt-0">
+          <h5 class="text-base font-bold">Billing Address</h5>
+          <For each={order.address.split(',')}>
+            {(line) => <p class="text-sm opacity-80">{line}</p>}
+          </For>
         </div>
-        <div className="col-12 col-lg-3 mt-4 mt-lg-0">
-          <h5 className="text-base">Payment information</h5>
-          <div className="d-flex">
-            <i className="fab fa-cc-visa text-2xl text-primary me-2 mt-1"></i>
-            <p className="text-sm">
-              <b>Ending with {order.payment.cardNumber}</b> <br/>
+        <div class="mt-4 lg:mt-0">
+          <h5 class="text-base font-bold">Payment information</h5>
+          <div class="flex">
+            <i class="fab fa-cc-visa text-2xl text-blue-600 m-2 mt-1"></i>
+            <p class="text-sm text-gray-600">
+              <b>Ending with {order.payment.cardNumber}</b> <br />
               <small>Expires {order.payment.expiringDate}</small>
             </p>
           </div>
         </div>
-        
-        <div className="col-12 col-lg-6">
-          <OrderSummary 
-            subtotal={subtotal} 
-            textColor=""  
+
+        <div>
+          <OrderSummary
+            subtotal={subtotal}
           />
         </div>
       </div>
     </div>
-    </>
   );
 };

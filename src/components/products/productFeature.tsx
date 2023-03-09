@@ -8,7 +8,7 @@ interface Props {
     alt: string;
   })[];
   full_description: string;
-  featuresDetails: Map<string,string>;
+  featuresDetails: object;
 }
 
 export default function ProductOverview({
@@ -19,26 +19,24 @@ export default function ProductOverview({
 }: Props) {
 
   return (
-    <>
-    <div className="card card-product card-plain">
-      <div className="row mt-5">
-        <div className="col-12 col-lg-6">
-          {(title.length != 0) && 
-            <h2 className="mb-3">{title}</h2>
+    <div class="container">
+      <div class="grid grid-flow-row md:grid-flow-col gap-8 mt-5">
+        <div>
+          {(title.length != 0) &&
+            <h2 class="mb-3 font-bold text-2xl">{title}</h2>
           }
-          {(full_description.length != 0) && 
-            <p className="mb-5">{full_description}</p>
+          {(full_description.length != 0) &&
+            <p class="mb-5 text-slate-500">{full_description}</p>
           }
-          
-          <div className="row">
+
+          <div class="grid grid-cols-2 gap-6">
             <ProductFeatureDetails featuresDetails={featuresDetails} />
           </div>
         </div>
-        <div className="col-12 col-lg-6">
-          <ProductFeatureImg images={images}/>
+        <div class='grid grid-flow-row items-center justify-center'>
+          <ProductFeatureImg images={images} />
         </div>
       </div>
     </div>
-    </>
   );
 };

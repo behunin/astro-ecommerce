@@ -9,7 +9,7 @@ interface Props {
     date: string;
     rating: number;
     comment: string;
-    productID: number;
+    productID: string;
   }[]
 }
 
@@ -17,48 +17,44 @@ export default function ReviewSummaryChart({
   reviews
 }: Props) {
 
-  let CommentsList = [];
-  let rating = 0;  
+  let CommentsList: any[] = [];
+  let rating = 0;
 
-  reviews.map(review => {  
+  reviews.map(review => {
     rating += review.rating;
     CommentsList.push(
-      <ReviewComment review={review} /> 
+      <ReviewComment review={review} />
     )
   });
-  
+
   rating = Math.trunc(rating / reviews.length);
 
   return (
-    <>
-    <div className="row">
-      <div className="col-12 col-lg-5">
-        <div className="card shadow-xs mb-4">
-          <div className="card-body p-md-5">
-          <h4 className="mb-3">Customer Reviews</h4>
-          <div className="d-flex">
-            <ReviewRating rating={rating}/>
-            <p className="mb-0 ms-2">Based on <b>{reviews.length}</b> reviews</p> 
+    <div class="grid grid-flow-row sm:grid-flow-col gap-3 items-center justify-evenly">
+      <div>
+        <div class="grid grid-flow-row items-center justify-evenly mx-auto">
+          <h4 class="mb-3">Customer Reviews</h4>
+          <div class="flex">
+            <ReviewRating rating={rating} />
+            <p class="mb-0 mx-2">Based on <b>{reviews.length}</b> reviews</p>
           </div>
-          <div className="my-4">
-            <ReviewProgress reviews={reviews}/>
+          <div class="md:m-4">
+            <ReviewProgress reviews={reviews} />
           </div>
-          <h6>Share your thoughts</h6>
+          <h6 class="py-3"><b>Share your thoughts</b></h6>
           <p>If you have used this product, share your thoughts with other customers.</p>
-          <button className="btn btn-white btn-lg w-100 mb-0">Write a review</button>
+          <div class='flex'>
+            <button class="relative rounded-md border w-11/12 h-24 hover:border-purple-800 shadow-inner mx-auto">Write a review</button>
           </div>
         </div>
       </div>
-      <div className="col-12 col-lg-7 max-height-500 overflow-scroll shadow-xs rounded-3 pt-4">
-        <div className="card card-plain">
-          <div className="card-body">
+      <div class="max-h-[24rem] overflow-auto shadow-sm">
+        <div class="card card-plain">
+          <div class="card-body">
             {CommentsList}
           </div>
         </div>
       </div>
     </div>
-
-    </>
-    
   );
 };

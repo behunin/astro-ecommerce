@@ -11,8 +11,7 @@
     "esModuleInterop": true,
     "strict": true,
     "importsNotUsedAsValues": "error",
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
-  },
-  "extends": "astro/tsconfigs/strict"
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
+  }
 }

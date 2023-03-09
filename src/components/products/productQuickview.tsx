@@ -1,3 +1,5 @@
+import { createEffect, createSignal } from 'solid-js';
+import { ModalCloseButton, ModalContent, ModalOverlay, Modal, ModalHeader, ModalBody, ModalFooter } from '../utils/Modal';
 import ProductBadge from './productBadge';
 import ProductRating from './productRating';
 import ProductSizes from './productSizes';
@@ -10,7 +12,7 @@ interface Props {
   colors: string[];
   rating: number;
   reviews: number;
-  sizes: Map<string,number>
+  sizes: object
 }
 
 export default function ProductQuickview({
@@ -23,58 +25,59 @@ export default function ProductQuickview({
   sizes
 }: Props) {
 
+  const [opened, setOpen] = createSignal(false);
+
+  createEffect(() => console.log("MODAL:", opened()));
+
   return (
-    <>
-    <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      Product Quickview
-    </button>
-    <div className="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div className="modal-dialog modal-dialog-centered modal-xl" role="document">
-        <div className="modal-content">
-          <div className="card card-product">
-            <div className="card-body d-block d-lg-flex p-4">
-              <button type="button" className="btn-close text-dark position-absolute me-4 end-0" data-bs-dismiss="modal" aria-label="Close"></button>
-              {(thumb_src) && 
-              <img className="w-70 w-md-60 w-lg-30 rounded-3 shadow-xs border mb-4 mb-md-0" src={thumb_src} />
-              }
-              <div className="w-100 w-lg-70 ps-4 mt-md-5 mt-lg-0">
-                <div className="d-flex align-items-center justify-content-between">
-                  {(title.length != 0) && 
-                    <h4 className="mb-0">{title}</h4>
-                  }
-                </div>
-                {(price) && 
-                  <>
-                    <div className="d-flex mb-3">
-                      <h6>${price.toFixed(2)}</h6>
-                      <input className="opacity-0" defaultValue={price} />
-                    </div>
-                  </>
+    <div>
+      <button class="border rounded-xl w-40 h-12 bg-gray-800 text-white" onClick={() => setOpen(true)}>
+        Product Quickview
+      </button>
+      <Modal opened={opened()} onClose={() => setOpen(false)} id="exampleModal1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <ModalOverlay />
+        <ModalContent>
+          <ModalCloseButton />
+          <div class="flex-auto gap-3 p-4">
+            {(thumb_src) &&
+              <img class="object-contain rounded-2xl shadow-sm border mb-4 md:mb-0" src={thumb_src} />
+            }
+            <div>
+              <ModalHeader>
+                {(title.length != 0) &&
+                  <h4 class="mb-0"><b>{title}</b></h4>
                 }
-                {(rating != 0) && 
+              </ModalHeader>
+              <ModalBody class="w-full md:mt-5 lg:mt-0">
+                {(price) &&
+                  <div class="flex mb-3">
+                    <h6><b>${price.toFixed(2)}</b></h6>
+                    <input class="opacity-0" value={price} />
+                  </div>
+                }
+                {(rating != 0) &&
                   <ProductRating rating={rating} reviews={reviews} />
                 }
-                {(colors.length != 0) && 
-                  <>
-                    <h6 className="mt-4">Color:</h6>
+                {(colors.length != 0) &&
+                  <div>
+                    <h6 class="mt-4">Color:</h6>
                     {(colors) &&
                       <ProductBadge colors={colors} />
                     }
-                  </>
+                  </div>
                 }
-                {(sizes.size != 0) && 
-                  <ProductSizes sizes={sizes}/>
+                {(sizes) &&
+                  <ProductSizes sizes={sizes} />
                 }
-                <div className="d-block text-center">
-                  <button className="btn btn-primary btn-lg w-100">Add to Bag</button>
-                  <a className="text-primary" href="#">View full details</a>
-                </div>
-              </div>
+              </ModalBody>
+              <ModalFooter class="flex flex-col gap-3 text-center mt-4">
+                <button class="border rounded-lg w-full h-12 bg-blue-600 text-white font-bold">Add to Bag</button>
+                <a class="text-blue-600" href="#">View full details</a>
+              </ModalFooter>
             </div>
           </div>
-        </div>
-      </div>
+        </ModalContent>
+      </Modal>
     </div>
-    </>
   );
 };

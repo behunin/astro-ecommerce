@@ -1,0 +1,13 @@
+/* -------------------------------------------------------------------------------------------------
+ * Modal - footer
+ * -----------------------------------------------------------------------------------------------*/
+
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 0.3rem;
+    padding-right: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}

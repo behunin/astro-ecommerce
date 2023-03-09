@@ -12,10 +12,7 @@ export default function ProductBadge({
   );
 }
 
-function badge(color:string) {
-  const badgeClass = "badge filter bg-" + color;
-  const badge = <span className={badgeClass}></span>
-  
-  return badge;
+function badge(color: string) {
+  return <span class={"inline-block border border-solid rounded-full p-4 mx-1 text-lg whitespace-nowrap align-baseline text-center"} style={{ "background-color": color }}></span>
 }
 

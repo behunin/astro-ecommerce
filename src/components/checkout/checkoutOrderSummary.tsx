@@ -17,59 +17,55 @@ interface Props {
     shipping: number;
     tax: number;
   })[];
-  textColor: string
+  textColor?: string
 }
 
 export default function CheckoutSummary({
- products,
- textColor
+  products,
+  textColor
 }: Props) {
 
   let subtotalCheckout = 0;
-  products.map(product => 
+  products.map(product =>
     subtotalCheckout += product.price
   )
 
   return (
-    <>
-      <section>
-        <div className="row">
-          <div className="col-12 col-lg-6 p-3 p-md-5">
-            <h5 className="mb-4">Contact information</h5>
-            <div className="form-group">
-              <label>Email address</label>
-              <input type="email" className="form-control" placeholder="name@example.com" />
-            </div>
-            <h5 className="mt-5 mb-4">Payment details</h5>
-            <PaymentDetails />
-
-            <h5 className="mt-5 mb-4">Shipping address</h5>
-            <ShippingInfo />
-
-            <h5 className="mt-5 mb-4">Billing information</h5>
-            <BillingInfo />
-
-            <hr className="dark horizontal"/>
-            <button className="btn btn-primary float-end mt-2 mb-0">Pay now</button>
-          </div>
-          <div className="col-12 col-lg-6 p-3 p-md-5 bg-dark bg-gradient rounded-end">
-            <small className="text-white opacity-6">Amount due</small>
-            <h3 className="text-white mb-4">${subtotalCheckout.toFixed(2)}</h3>
-            {products.map((product, i) => 
-                <CheckoutSingleItem
-                  thumb_src={product.thumb_src}
-                  thumb_alt={product.thumb_alt}
-                  title={product.title}
-                  color={product.color}
-                  size={product.size}
-                  price={product.price}
-                />
-            )}
-            <OrderSummary subtotal={subtotalCheckout} textColor="white" />
-          </div>
+    <div class="grid grid-flow-row md:grid-flow-col gap-3">
+      <div class="col-span-1 md:col-span-2">
+        <h5 class="mb-4 font-bold">Contact information</h5>
+        <div class="flex flex-col gap-1 font-medium">
+          <label>Email address</label>
+          <input type="email" class="border rounded h-10 placeholder:pl-3" placeholder="name@example.com" />
         </div>
-      </section>
-    </>
+        <h5 class="mt-5 mb-4 font-bold">Payment details</h5>
+        <PaymentDetails />
+
+        <h5 class="mt-5 mb-4 font-bold">Shipping address</h5>
+        <ShippingInfo title='TODO' />
+
+        <h5 class="mt-5 mb-4 font-bold">Billing information</h5>
+        <BillingInfo title='TODO' />
+
+        <hr />
+        <button class="border rounded-xl h-10 w-32 bg-blue-600 float-right items-end mt-2 mb-0 text-white font-bold">Pay now</button>
+      </div>
+      <div class="md:p-5 bg-gray-600 rounded md:col-span-2">
+        <small class="text-white opacity-60">Amount due</small>
+        <h3 class="text-white mb-4 text-4xl font-bold">${subtotalCheckout.toFixed(2)}</h3>
+        {products.map((product, i) =>
+          <CheckoutSingleItem
+            thumb_src={product.thumb_src}
+            thumb_alt={product.thumb_alt}
+            title={product.title}
+            color={product.color}
+            size={product.size}
+            price={product.price}
+          />
+        )}
+        <OrderSummary subtotal={subtotalCheckout} />
+      </div>
+    </div>
   );
 };
 

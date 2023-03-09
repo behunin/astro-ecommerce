@@ -18,19 +18,17 @@ export default function CheckoutSingleItem({
 }: Props) {
 
   return (
-    <>
-      <div className="d-flex mb-4">
-        <img className="w-20 rounded-3 shadow-xs" src={thumb_src} alt={thumb_alt} />
-        <div className="w-60 w-md-70 pt-2 ps-3 ps-md-4">
-          <h6 className="text-lg text-white mb-1">{title}</h6>
-          <p className="mb-0 text-white opacity-8">{color}</p>
-          <p className="mb-0 text-sm text-white opacity-8">{size}</p>
-        </div>
-
-        <div className="w-10 text-end">
-          <p className="text-white mb-0 ">${price.toFixed(2)}</p>
-        </div>
+    <div class="flex mb-4 items-center relative">
+      <img class="h-40 rounded-xl shadow-sm" src={thumb_src} alt={thumb_alt} />
+      <div class="w-60 md:w-72 pt-2 px-3 md:px-4 self-start">
+        <h6 class="text-lg text-white mb-4 font-bold">{title}</h6>
+        <p class="mb-0 text-white opacity-80">{color}</p>
+        <p class="mb-0 text-sm text-white opacity-80">{size}</p>
       </div>
-    </>
+
+      <div class="absolute right-0">
+        <p class="text-white mb-0 ">${price.toFixed(2)}</p>
+      </div>
+    </div>
   );
 }

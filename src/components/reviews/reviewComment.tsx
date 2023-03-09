@@ -15,19 +15,19 @@ export default function ReviewComment({
 }: Props) {
 
   return (
-    <>
-      <div className="d-flex">
-        <a href="#" className="avatar avatar-xl rounded-circle min-width-50 min-height-50">
-          <img alt="Image placeholder" src={review.avatar} />
+    <div>
+      <div class="flex flex-col md:flex-row gap-3 my-3">
+        <a href="#" class="inline-flex overflow-hidden">
+          <img class="object-contain object-center rounded-full" alt="Image placeholder" src={review.avatar} />
         </a>
-        <div className="ps-4">
-          <h6 className="mb-0">{review.name}</h6>
-          <p className="text-sm mb-2">{review.date}</p>
-          <ReviewRating rating={review.rating}/>
-          <p className="text-sm mt-4">{review.comment}</p>
+        <div class="flex flex-col">
+          <h6 class="mb-0 font-bold">{review.name}</h6>
+          <p class="text-sm mb-2 text-slate-500">{review.date}</p>
+          <ReviewRating rating={review.rating} />
+          <p class="text-sm mt-4">{review.comment}</p>
         </div>
       </div>
-      <hr className="dark horizontal" />
-    </>
+      <hr class="text-gray-800" />
+    </div>
   );
 };

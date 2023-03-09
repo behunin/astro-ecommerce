@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { createSignal } from 'solid-js';
 
 type CopiedValue = string | null;
 type CopyFn = (text: string) => Promise<boolean>; // Return success
 
 export default function useCopyToClipboard(): [CopiedValue, CopyFn] {
-  const [copiedText, setCopiedText] = useState<CopiedValue>(null);
+  const [copiedText, setCopiedText] = createSignal<CopiedValue>(null);
 
   const copy: CopyFn = async (text) => {
     if (!navigator?.clipboard) {
@@ -24,5 +24,5 @@ export default function useCopyToClipboard(): [CopiedValue, CopyFn] {
     }
   };
 
-  return [copiedText, copy];
+  return [copiedText(), copy];
 }

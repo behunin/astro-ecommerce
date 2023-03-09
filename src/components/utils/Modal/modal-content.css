@@ -1,0 +1,123 @@
+/* -------------------------------------------------------------------------------------------------
+ * Modal - container
+ * -----------------------------------------------------------------------------------------------*/
+.modal-container {
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-behavior: smooth;
+    overflow: auto;
+
+    width: 100vw;
+    height: 100%;
+
+    @supports(height: -webkit-fill-available) {
+        height: -webkit-fill-available;
+    }
+
+    outline: none;
+}
+
+.modal-container:focus {
+    outline: none;
+}
+
+/* -------------------------------------------------------------------------------------------------
+   * Modal - dialog (content)
+   * -----------------------------------------------------------------------------------------------*/
+.dialog {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    width: 80vw;
+    border-radius: 0.75rem;
+    outline: none;
+    box-shadow: gray;
+    background-color: azure;
+    color: inherit;
+}
+
+.dialog:focus {
+    outline: none;
+}
+
+
+
+/* -------------------------------------------------------------------------------------------------
+ * Modal - solid-transition-group classes
+ * -----------------------------------------------------------------------------------------------*/
+.modal-fade-transition-enter,
+.modal-fade-transition-exit-to {
+    opacity: 0;
+}
+
+.modal-fade-transition-enter-to,
+.modal-fade-transition-exit {
+    opacity: 1;
+}
+
+.modal-fade-transition-enter-active {
+    transition: opacity 600ms ease-out;
+}
+
+.modal-fade-transition-exit-active {
+    transition: opacity 400ms ease-in;
+}
+
+.modal-fade-in-bottom-transition-enter,
+.modal-fade-in-bottom-transition-exit-to {
+    opacity: 0;
+    transform: translateY(16px);
+}
+
+.modal-fade-in-bottom-transition-enter-to,
+.modal-fade-in-bottom-transition-exit {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.modal-fade-in-bottom-transition-enter-active {
+    transition-property: opacity transform;
+    transition-duration: 600ms;
+    transition-timing-function: ease-out;
+}
+
+.modal-fade-in-bottom-transition-exit-active {
+    transition-property: opacity transform;
+    transition-duration: 400ms;
+    transition-timing-function: ease-in;
+}
+
+.modal-scale-transition-enter,
+.modal-scale-transition-exit-to {
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.modal-scale-transition-enter-to,
+.modal-scale-transition-exit {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal-scale-transition-enter-active {
+    transition-property: opacity transform;
+    transition-duration: 600ms;
+    transition-timing-function: ease-out;
+}
+
+.modal-scale-transition-exit-active {
+    transition-property: opacity transform;
+    transition-duration: 400ms;
+    transition-timing-function: ease-in;
+}

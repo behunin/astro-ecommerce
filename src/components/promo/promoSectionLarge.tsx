@@ -3,7 +3,7 @@ interface Props {
   full_description: string;
   pageHeaderBgImg: string;
   pageHeaderMinVh: string;
-  pageHeaderRadius: string;
+  pageHeaderRadius?: string;
 }
 
 export default function TestimonialsFade({
@@ -16,29 +16,28 @@ export default function TestimonialsFade({
 
   const styles = {
     pageHeader: {
-      backgroundImage: 'url(' + pageHeaderBgImg + ')',
-      minHeight: pageHeaderMinVh,
-      borderRadius: pageHeaderRadius
+      "background-color": "gray",
+      "background-image": 'url(' + pageHeaderBgImg + ')',
+      "min-height": pageHeaderMinVh,
+      "border-radius": pageHeaderRadius,
+      "background-size": "cover",
+      "background-position": "center",
+      "background-blend-mode": "multiply"
     },
-  } as const;
+  };
 
   return (
-    <>
-      <section>
-        <div className="page-header py-5 py-md-0" style={styles.pageHeader}>
-          <span className="mask bg-gradient-dark opacity-7"></span>
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col-lg-8 col-sm-9 text-center mx-auto">
-                <h1 className="text-white mb-4">{title}</h1>
-                <p className="lead text-white mb-sm-6 mb-4">{full_description}</p>
-                <button className="btn btn-white btn-lg">Show new arrivals</button>
-              </div>
-            </div>
+    <section>
+      <div class="py-5 md:py-0" style={styles.pageHeader}>
+        <div class="grid grid-flow-row justify-center items-center mx-auto">
+          <h1 class="text-white text-center mt-[10%] mb-4 font-bold text-[6rem]">{title}</h1>
+          <p class="text-white text-center max-w-lg sm:mb-6 mb-4 mx-auto">{full_description}</p>
+          <div class="w-full">
+            <button class="block border rounded bg-white w-40 h-12 mx-auto">Show new arrivals</button>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 

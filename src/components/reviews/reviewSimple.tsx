@@ -14,21 +14,17 @@ export default function ReviewSimple({
   reviews
 }: Props) {
 
-  let CommentsList = [];
+  let CommentsList: any[] = [];
 
-  reviews.map(review => {  
+  reviews.map(review => {
 
     CommentsList.push(
-      <ReviewComment review={review} /> 
+      <ReviewComment review={review} />
     )
   });
   return (
-    <>
-    <div className="w-100 w-md-80 w-lg-50 mx-auto">
+    <div>
       {CommentsList}
     </div>
-
-    </>
-    
   );
 };

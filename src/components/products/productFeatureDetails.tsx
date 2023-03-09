@@ -1,19 +1,19 @@
 interface Props {
-  featuresDetails: Map<string,string>
+  featuresDetails: object
 }
 
 export default function ProductAccordion({
   featuresDetails
 }: Props) {
 
-  const prodFeatures = [];
+  const prodFeatures: any[] = [];
 
-  Object.entries(featuresDetails).map(([title,value]) => {    
+  Object.entries(featuresDetails).map(([title, value]) => {
     prodFeatures.push(
-      <div className="col-12 col-md-6 w-md-50">
-        <div className="p-3 border-top">
-          <h6>{title}</h6>
-          <p>{value}</p>
+      <div class="md:w-50">
+        <div class="p-3 border-t">
+          <h6><b>{title}</b></h6>
+          <p class="text-slate-500">{value}</p>
         </div>
       </div>
     )

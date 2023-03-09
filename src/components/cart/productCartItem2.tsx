@@ -20,36 +20,34 @@ export default function CartItem({
 }: Props) {
 
   return (
-    <>
-      <div className="d-block d-md-flex mt-4">
-        <img className="w-50 w-md-20 w-lg-10 rounded-3 shadow-xs m-4" src={thumb_src} alt={thumb_alt} />
-        <div className="w-100 w-md-50 pt-4 ps-md-4">
-          <h6 className="text-lg mb-1">{title}</h6>
-            <p className="mb-0">{color}</p>
-            <p className="mb-0">{size}</p>
+    <div class="flex flex-col md:flex-row items-center mt-4">
+      <img class="w-1/2 md:w-1/5 lg:w-1/6 rounded-md" src={thumb_src} alt={thumb_alt} />
+      <div class="pt-4 md:px-4 w-1/4">
+        <h6 class="text-lg mb-1">{title}</h6>
+        <p class="mb-0">{color}</p>
+        <p class="mb-0">{size}</p>
 
-          <div className="d-flex align-items-center mt-6">
-           {(stock) ? 
+        <div class="flex items-center mt-6">
+          {(stock) ?
             <>
-              <i className="fas fa-check text-lg text-success"></i>
-              <p className="mb-0 ms-2 text-sm">In Stock</p>
+              <i class="fas fa-check text-lg text-green-300"></i>
+              <p class="mb-0 mx-2 text-sm">In Stock</p>
             </>
             :
             <>
-              <i className="fas fa-minus-circle text-lg"></i>
-              <p className="mb-0 ms-2 text-sm">Out of Stock</p>
+              <i class="fas fa-minus-circle text-lg"></i>
+              <p class="mb-0 mx-2 text-sm">Out of Stock</p>
             </>
-           }
-          </div>
-        </div>
-        <div className="w-20 w-md-5 pt-4">
-          <input type="number" min={0} className="form-control mb-3" placeholder="1" aria-label="amount" />
-          <a className="text-primary" href="#">Remove</a>
-        </div>
-        <div className="w-25 pt-4 text-end">
-          <h6 className="mb-1">${price.toFixed(2)}</h6>
+          }
         </div>
       </div>
-    </>
+      <div class="grid grid-flow-row items-center justify-center text-center pt-4 mx-auto">
+        <input type="number" min={0} class="border border-slate-300 rounded mb-3 max-w-[3rem] mx-auto" placeholder="1" aria-label="amount" />
+        <a class="text-red-800" href="#">Remove</a>
+      </div>
+      <div class="w-1/4 pt-4 text-end">
+        <h6 class="mb-1">${price.toFixed(2)}</h6>
+      </div>
+    </div>
   );
 }

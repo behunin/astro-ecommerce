@@ -16,7 +16,7 @@ interface Props {
   details: string;
   rating: number;
   reviews: number;
-  sizes: Map<string,number>
+  sizes: object
 }
 
 export default function ProductOverview({
@@ -33,70 +33,71 @@ export default function ProductOverview({
 }: Props) {
 
   return (
-    <>
-    <div className="card card-product card-plain">
-      {(images.length != 0) && 
-      <ProductGallery images={images}/>
+    <div class="grid grid-flow-row shadow-md">
+      {(images.length != 0) &&
+        <div class="mx-auto">
+          <ProductGallery images={images} />
+        </div>
+
       }
-      <div className="row mt-5">
-        <div className="col-12 col-lg-8 border-end">
-          {(title.length != 0) && 
-            <h2>{title}</h2>
+      <div class="grid grid-flow-row sm:grid-flow-col gap-3 items-center justify-evenly mt-5 mx-auto">
+        <div class="border-end">
+          {(title.length != 0) &&
+            <h2><b>{title}</b></h2>
           }
-          {(full_description.length != 0) && 
+          {(full_description.length != 0) &&
             <p>{full_description}</p>
           }
-          {(highlights.length != 0) && 
-           <>
-             <h6>Highlights</h6>
-              <ul className="text-sm">
-              {highlights.map(highlight => 
-                <li className="mb-2">{highlight}</li>
-              )}
-              </ul>
-           </>
-          }
-           {(details.length != 0) && 
+          {(highlights.length != 0) &&
             <>
-              <h6>Details</h6>
+              <h6>Highlights</h6>
+              <ul class="text-sm">
+                {highlights.map(highlight =>
+                  <li class="mb-2">{highlight}</li>
+                )}
+              </ul>
+            </>
+          }
+          {(details.length != 0) &&
+            <>
+              <h6><b>Details</b></h6>
               <p>{details}</p>
             </>
-           }
+          }
 
         </div>
-        <div className="col-12 col-lg-4 ps-4">
+        <div class="grid-cols-12 lg:grid-cols-4 p-4">
           <form action="" method="post">
-            {(price.length != 0) && 
-            <div className="d-flex">
-              <h3 className="font-weight-normal">${price.toFixed(2)}</h3>
-              <input className="opacity-0" defaultValue={price} />
-            </div>
+            {(price != 0) &&
+              <div class="flex">
+                <h3 class="font-bold text-2xl">${price.toFixed(2)}</h3>
+                <input class="opacity-0" value={price} />
+              </div>
             }
-            {(rating != 0) && 
-            <>
-              <h3 className="sr-only">Reviews</h3>
-              <ProductRating rating={rating} reviews={reviews} />
-            </>
+            {(rating != 0) &&
+              <>
+                <h3 class="sr-only">Reviews</h3>
+                <ProductRating rating={rating} reviews={reviews} />
+              </>
             }
-            {(colors.length != 0) && 
-            <>
-            <h6 className="mt-4">Colors:</h6>
-            <div className="d-flex">
-              {(colors) &&
-                <ProductBadge colors={colors} />
-              }
-            </div>
-            </>
+            {(colors.length != 0) &&
+              <>
+                <h6 class="mt-4">Colors:</h6>
+                <div class="flex">
+                  {(colors) &&
+                    <ProductBadge colors={colors} />
+                  }
+                </div>
+              </>
             }
-            
-            {(sizes.size != 0) && 
-              <ProductSizes sizes={sizes}/>
+
+            {(sizes) &&
+              <ProductSizes sizes={sizes} />
             }
-            <button className="btn btn-primary btn-lg w-100" type="submit">Add to cart</button>
+            <button class="w-max" type="submit">Add to cart</button>
           </form>
         </div>
       </div>
     </div>
-    </>
   );
 };

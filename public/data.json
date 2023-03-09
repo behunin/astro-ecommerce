@@ -24,8 +24,8 @@
       ],
       "color": "8 colors",
       "colors": [
-        "red", 
-        "blue", 
+        "red",
+        "blue",
         "green"
       ],
       "title": "Basic Starter Pack",
@@ -97,7 +97,10 @@
         }
       ],
       "color": "Black",
-      "colors": ["black", "green"],
+      "colors": [
+        "black",
+        "green"
+      ],
       "title": "Apple Watch",
       "price": 199,
       "rating": 5,
@@ -160,7 +163,9 @@
         }
       ],
       "color": "Yellow",
-      "colors": ["SpaceGray"],
+      "colors": [
+        "SpaceGray"
+      ],
       "title": "iMac",
       "description": "There’s nothing I really wanted to do in life that I wasn’t able to get good at. That’s my skill. I’m not really specifically talented",
       "price": 1399,
@@ -300,7 +305,7 @@
       "phoneNumber": "+1*****21"
     },
     {
-      "orderNumber": "WB2341",
+      "orderNumber": 2341,
       "products": [
         {
           "id": "03",
@@ -319,7 +324,7 @@
       "phoneNumber": "+4*****23"
     },
     {
-      "orderNumber": "010110",
+      "orderNumber": 10110,
       "products": [
         {
           "id": "04",
@@ -351,12 +356,12 @@
     }
   ],
   "shoppingCart": [
-    "01", 
-    "02", 
+    "01",
+    "02",
     "03"
   ],
-  "shoppingCart2": [ 
-    "02", 
+  "shoppingCart2": [
+    "02",
     "03",
     "04"
   ]
