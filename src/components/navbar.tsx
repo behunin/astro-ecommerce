@@ -32,7 +32,7 @@ const Navbar = () => {
           data-te-collapse-item>
           <a
             class="mt-2 mr-2 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mt-0"
-            href="#">
+            href="/astro-ecommerce/">
             <img
               src="https://tecdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.png"
               style="height: 15px"
