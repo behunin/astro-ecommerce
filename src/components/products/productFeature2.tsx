@@ -20,7 +20,7 @@ export default function ProductOverview({
   const [events, setEvents] = createSignal('');
 
   return (
-    <div class="grid grid-flow-row mt-5">
+    <div class="grid grid-flow-row mt-5 w-4/5 mx-auto border rounded-lg shadow-lg p-1">
       {(title.length != 0) &&
         <h2 class="mb-3 text-4xl"><b>{title}</b></h2>
       }

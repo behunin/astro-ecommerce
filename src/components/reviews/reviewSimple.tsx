@@ -23,7 +23,7 @@ export default function ReviewSimple({
     )
   });
   return (
-    <div>
+    <div class='w-4/5 mx-auto'>
       {CommentsList}
     </div>
   );

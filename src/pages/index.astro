@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import data from "../../public/data.json";
 import Navbar from "../components/navbar";
 import NavDrawer from "../components/navdrawer";
-import Footer from "../components/footer";
+import Footer from "../components/footer.astro";
 import StoreNavbar from "../components/store/storeNavbar";
 import CardProduct from "../components/products/cardProduct";
 import CardCategory from "../components/products/cardCategory";
@@ -82,7 +82,7 @@ data.orders.forEach((order) => {
   <main class="container mx-auto">
     <div class="grid grid-flow-row items-center justify-center">
       <div
-        class="grid grid-flow-row md:grid-flow-col gap-3 items-top justify-center mx-auto"
+        class="flex flex-col md:flex-row flex-shrink gap-3 items-top justify-center mx-auto"
       >
         {
           data.products.map((product) => (
@@ -120,7 +120,7 @@ data.orders.forEach((order) => {
       </div>
 
       <div
-        class="grid grid-flow-row md:grid-flow-col gap-3 items-center justify-between mb-5 mx-auto"
+        class="grid grid-flow-row md:grid-flow-col gap-3 items-center justify-center mb-5 mx-auto"
       >
         {
           data.categories.map((category) => (
@@ -133,7 +133,7 @@ data.orders.forEach((order) => {
         }
       </div>
 
-      <div class="my-10">
+      <div class="my-10 mx-auto">
         <ProductOverviewGrid
           colors={data.products[0].colors!}
           images={data.products[0].images!}
@@ -173,7 +173,7 @@ data.orders.forEach((order) => {
         <CategoryFilters title={data.products[0].title} />
       </div>
 
-      <div class="grid grid-flow-row md:grid-flow-col gap-10">
+      <div class="grid grid-flow-row md:grid-flow-col gap-10 w-4/5 mx-auto">
         <ProductQuickview
           client:visible
           colors={data.products[0].colors!}
@@ -217,7 +217,7 @@ data.orders.forEach((order) => {
       <div class="my-10">
         <StoreNavigation />
         <div
-          class="grid grid-flow-row md:grid-flow-col gap-3 items-center justify-evenly mt-4"
+          class="grid grid-flow-row md:grid-flow-col gap-3 items-center justify-evenly mt-4 w-4/5 mx-auto"
         >
           {
             data.products.map((product) => (

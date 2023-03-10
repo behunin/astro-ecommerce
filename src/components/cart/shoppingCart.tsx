@@ -26,7 +26,7 @@ export default function ShoppingCart({
   )
 
   return (
-    <div class="container grid grid-flow-row items-center justify-evenly mt-5">
+    <div class="container grid grid-flow-row items-center justify-evenly mt-5 border rounded-lg shdow-lg">
       <h2 class="mb-5"><b>Shopping Cart</b></h2>
       <div class="grid grid-flow-row md:grid-flow-col gap-3 items-center justify-evenly">
         <div>

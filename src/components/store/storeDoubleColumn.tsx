@@ -1,7 +1,7 @@
 export default function StoreNavigationDoubleColumn() {
   return (
     <section>
-      <div class="grid grid-flow-row md:grid-flow-col gap-8 mt-5">
+      <div class="grid grid-flow-row md:grid-flow-col gap-8 mt-5 w-4/5 mx-auto">
         <div class="mb-4 lg:mb-0">
           <h6 class="w-full pb-3 border-b-slate-800">Clothing</h6>
           <hr />

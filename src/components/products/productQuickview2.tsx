@@ -41,7 +41,7 @@ export default function ProductQuickview({
               {(thumb_src) &&
                 <img class="object-cover rounded shadow-sm border mb-4 w-20" src={thumb_src} />
               }
-              <a class="text-blue-600 mb-4" href="#">View full details</a>
+              <a class="text-primary mb-4" href="#">View full details</a>
             </div>
 
             <div class='grid grid-flow-row items-center justify-center'>

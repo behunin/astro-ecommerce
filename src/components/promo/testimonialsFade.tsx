@@ -20,7 +20,7 @@ export default function TestimonialsFade({
   } as const;
 
   return (
-    <section>
+    <section class="w-4/5 mx-auto">
       <div class="rounded-t" style={styles.pageHeader}>
         <div class="container z-10">
           <div class="grid grid-flow-col justify-content-center">

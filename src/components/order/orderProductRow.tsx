@@ -20,14 +20,14 @@ export default function OrderSummary({
 
   return (
     <tr class="border-b">
-      <th scope="row" class="flex items-center text-sm text-gray-600 py-3">
+      <th scope="row" class="flex items-center py-3">
         <img class="w-20 lg:w-10 rounded-xl shadow-sm" src={product.thumb_src} alt={product.thumb_alt} />
-        <p class="text-sm text-gray-800 font-bold mb-0 mx-3">{product.title}</p>
+        <p class="text-sm text-faded font-bold mb-0 mx-3">{product.title}</p>
       </th>
-      <td class="text-sm text-gray-600 pt-3 px-2">${product.price.toFixed(2)}</td>
-      <td class="text-sm text-gray-600 pt-3 px-2">{status} {dateModified}</td>
-      <td class="text-sm text-gray-600 pt-3 px-2 text-end">
-        <a href="#" class="text-blue-600">ViewProduct</a>
+      <td class="text-sm text-faded pt-3 px-2">${product.price.toFixed(2)}</td>
+      <td class="text-sm text-faded pt-3 px-2">{status} {dateModified}</td>
+      <td class="text-sm text-faded pt-3 px-2 text-end">
+        <a href="#" class="text-primary">ViewProduct</a>
       </td>
     </tr>
   );

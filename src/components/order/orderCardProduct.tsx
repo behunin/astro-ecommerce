@@ -44,7 +44,7 @@ export default function OrderCardProduct({
   }
 
   return (
-    <div class="shadow-md border p-1 md:p-4 mb-4">
+    <div class="shadow-md border rounded-xl p-3 mb-4">
       <div class="grid grid-flow-row md:grid-flow-col gap-6 border-b pb-4">
         <div class='flex items-center justify-center'>
           <img class="w-1/2 rounded-lg shadow-md mb-3 md:mb-0" src={product.thumb_src} alt={product.thumb_alt} />
@@ -65,7 +65,7 @@ export default function OrderCardProduct({
           <h5 class="text-base">Shipping updates</h5>
           <p class="text-sm opacity-80">{email}</p>
           <p class="text-sm opacity-80">{phoneNumber}</p>
-          <a class="text-sm text-blue-600 font-bold" href="#">Edit</a>
+          <a class="text-sm text-primary font-bold" href="#">Edit</a>
         </div>
       </div>
       <div class="hidden md:block mt-4">
@@ -74,7 +74,7 @@ export default function OrderCardProduct({
           <span class={widthClass}></span>
         </div>
         <div class="block md:flex justify-between">
-          <p class="font-semibold text-blue-600">Order placed</p>
+          <p class="font-semibold text-primary">Order placed</p>
           {status == "Order Placed" &&
             <>
               <p class="font-semibold">Processed</p>
@@ -84,23 +84,23 @@ export default function OrderCardProduct({
           }
           {status == "Processed" &&
             <>
-              <p class="font-semibold text-blue-600">Processed</p>
+              <p class="font-semibold text-primary">Processed</p>
               <p class="font-semibold">Shipped</p>
               <p class="font-semibold">Delivered</p>
             </>
           }
           {status == "Shipped" &&
             <>
-              <p class="font-semibold text-blue-600">Processed</p>
-              <p class="font-semibold text-blue-600">Shipped</p>
+              <p class="font-semibold text-primary">Processed</p>
+              <p class="font-semibold text-primary">Shipped</p>
               <p class="font-semibold">Delivered</p>
             </>
           }
           {status == "Delivered" &&
             <>
-              <p class="font-semibold text-blue-600">Processed</p>
-              <p class="font-semibold text-blue-600">Shipped</p>
-              <p class="font-semibold text-blue-600">Delivered</p>
+              <p class="font-semibold text-primary">Processed</p>
+              <p class="font-semibold text-primary">Shipped</p>
+              <p class="font-semibold text-primary">Delivered</p>
             </>
           }
         </div>

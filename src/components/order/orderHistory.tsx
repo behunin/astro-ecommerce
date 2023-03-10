@@ -45,7 +45,7 @@ export default function OrderHistory({
     orderHistoryCards.push(<OrderHistoryCard order={order} products={orderProducts} />)
   });
   return (
-    <div>
+    <div class='w-11/12 mx-auto'>
       <h3 class="mb-0 font-bold">Order history</h3>
       <p>Check the status of recent orders, manage returns and download invoices.</p>
 

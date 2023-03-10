@@ -30,7 +30,7 @@ export default function ReviewSummaryChart({
   rating = Math.trunc(rating / reviews.length);
 
   return (
-    <div class="grid grid-flow-row sm:grid-flow-col gap-3 items-center justify-evenly">
+    <div class="grid grid-flow-row sm:grid-flow-col gap-3 items-center justify-evenly w-4/5 mx-auto">
       <div>
         <div class="grid grid-flow-row items-center justify-evenly mx-auto">
           <h4 class="mb-3">Customer Reviews</h4>

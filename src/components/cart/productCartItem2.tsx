@@ -30,20 +30,20 @@ export default function CartItem({
         <div class="flex items-center mt-6">
           {(stock) ?
             <>
-              <i class="fas fa-check text-lg text-green-300"></i>
+              <i class="fas fa-check text-lg text-success"></i>
               <p class="mb-0 mx-2 text-sm">In Stock</p>
             </>
             :
             <>
-              <i class="fas fa-minus-circle text-lg"></i>
-              <p class="mb-0 mx-2 text-sm">Out of Stock</p>
+              <i class="fas fa-minus-circle text-neutral text-lg"></i>
+              <p class="mb-0 mx-2 text-neutral text-sm">Out of Stock</p>
             </>
           }
         </div>
       </div>
       <div class="grid grid-flow-row items-center justify-center text-center pt-4 mx-auto">
         <input type="number" min={0} class="border border-slate-300 rounded mb-3 max-w-[3rem] mx-auto" placeholder="1" aria-label="amount" />
-        <a class="text-red-800" href="#">Remove</a>
+        <a class="text-error" href="#">Remove</a>
       </div>
       <div class="w-1/4 pt-4 text-end">
         <h6 class="mb-1">${price.toFixed(2)}</h6>

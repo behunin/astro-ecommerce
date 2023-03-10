@@ -61,8 +61,8 @@ export default function OrderHistoryCard({
 
   return (
     <section>
-      <div class="bg-gray-100 rounded-xl mt-5 mb-4">
-        <div class="block md:flex justify-between items-center">
+      <div class="bg-neutral-100 rounded-xl mt-5 mb-4">
+        <div class="flex justify-between items-center rounded-xl">
           <div class="block md:flex">
             <div class="flex md:block justify-between p-4 md:m-4">
               <h6><b>Data placed</b></h6>
@@ -77,7 +77,7 @@ export default function OrderHistoryCard({
               <p class="text-sm mb-0">$299.00</p>
             </div>
           </div>
-          <button class="border rounded-md md:mb-0 m-4 bg-white font-bold text-gray-600 h-10 w-36" onClick={() => setOpen(true)}>View invoice</button>
+          <button class="border rounded-md md:mb-0 m-4 bg-white font-bold text-secondary h-10 w-36" onClick={() => setOpen(true)}>View invoice</button>
           <Modal opened={opened()} onClose={() => setOpen(false)} id="invoiceModal1" aria-labelledby="invoiceModal1" aria-hidden="true">
             <ModalOverlay />
             <ModalContent>
@@ -130,10 +130,10 @@ export default function OrderHistoryCard({
                   <table class="table-auto w-full">
                     <thead class="bg-default">
                       <tr>
-                        <th scope="col" class="text-left text-white">Item</th>
-                        <th scope="col" class="text-left text-white">Qty</th>
-                        <th scope="col" class="text-left text-white">Rate</th>
-                        <th scope="col" class="text-left text-white">Amount</th>
+                        <th scope="col" class="text-left text-accent">Item</th>
+                        <th scope="col" class="text-left text-accent">Qty</th>
+                        <th scope="col" class="text-left text-accent">Rate</th>
+                        <th scope="col" class="text-left text-accent">Amount</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -184,10 +184,10 @@ export default function OrderHistoryCard({
         <table class="w-full">
           <thead>
             <tr>
-              <th scope="col" class="text-gray-600 text-xs font-semibold opacity-70 px-2 text-start">Product</th>
-              <th scope="col" class="text-gray-600 text-xs font-semibold opacity-70 px-2 text-start">Price</th>
-              <th scope="col" class="text-gray-600 text-xs font-semibold opacity-70 px-2 text-start">Status</th>
-              <th scope="col" class="text-gray-600 text-xs font-semibold opacity-70 px-2 text-end">Info</th>
+              <th scope="col" class="text-faded text-xs font-semibold opacity-70 px-2 text-start">Product</th>
+              <th scope="col" class="text-faded text-xs font-semibold opacity-70 px-2 text-start">Price</th>
+              <th scope="col" class="text-faded text-xs font-semibold opacity-70 px-2 text-start">Status</th>
+              <th scope="col" class="text-faded text-xs font-semibold opacity-70 px-2 text-end">Info</th>
             </tr>
           </thead>
           <tbody>

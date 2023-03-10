@@ -33,14 +33,11 @@ export default function ProductOverview({
 }: Props) {
 
   return (
-    <div class="grid grid-flow-row shadow-md">
+    <div class="grid grid-flow-row items-center justify-center shadow-lg rounded-lg border">
       {(images.length != 0) &&
-        <div class="mx-auto">
-          <ProductGallery images={images} />
-        </div>
-
+        <ProductGallery images={images} />
       }
-      <div class="grid grid-flow-row sm:grid-flow-col gap-3 items-center justify-evenly mt-5 mx-auto">
+      <div class="grid grid-flow-row sm:grid-flow-col gap-3 items-center justify-evenly mt-5 w-4/5 mx-auto">
         <div class="border-end">
           {(title.length != 0) &&
             <h2><b>{title}</b></h2>
@@ -66,7 +63,7 @@ export default function ProductOverview({
           }
 
         </div>
-        <div class="grid-cols-12 lg:grid-cols-4 p-4">
+        <div class="p-4">
           <form action="" method="post">
             {(price != 0) &&
               <div class="flex">

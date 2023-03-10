@@ -19,7 +19,7 @@ export default function ProductOverview({
 }: Props) {
 
   return (
-    <div class="container">
+    <div class="w-4/5 mx-auto border rounded-lg shadow-lg p-1">
       <div class="grid grid-flow-row md:grid-flow-col gap-8 mt-5">
         <div>
           {(title.length != 0) &&

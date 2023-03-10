@@ -25,8 +25,8 @@ export default function ShoppingCart({
   )
 
   return (
-    <div class="container">
-      <h2 class="mb-4">Shopping Cart</h2>
+    <div class="w-4/5 mx-auto border shadow-lg rounded-lg">
+      <h2 class="mb-4 ml-4">Shopping Cart</h2>
       <div class="grid grid-flow-row gap-3 items-center justify-evenly">
         <div>
           {products.map((product, i) =>
@@ -55,7 +55,7 @@ export default function ShoppingCart({
             </div>
           </div>
           <button class="border rounded-lg bg-blue-500 text-white mt-4 w-full h-10">Checkout</button>
-          <p class="text-center mt-4 mb-0">or <a class="text-blue-300 mx-2" href="#">continue shopping <i class="fas fa-arrow-right mx-1"></i></a></p>
+          <p class="text-center mt-4 mb-0">or <a class="text-primary mx-2" href="#">continue shopping <i class="fas fa-arrow-right mx-1"></i></a></p>
         </div>
       </div>
     </div>

@@ -32,7 +32,7 @@ export default function CheckoutSummary({
 
   return (
     <section>
-      <div class="grid  grid-flow-row md:grid-cols-4 gap-3">
+      <div class="grid grid-flow-row md:grid-cols-4 gap-3 w-11/12 mx-auto">
         <div class="grid grid-flow-row gap-4 col-span-2">
           <small class="text-white opacity-60">Amount due</small>
           <h3 class="text-white">${subtotalCheckout.toFixed(2)}</h3>
@@ -53,7 +53,7 @@ export default function CheckoutSummary({
             <i class="fab fa-apple m-2"></i>
             Pay
           </button>
-          <div class="mt-2 mb-4 relative text-center">
+          <div class="my-4 relative text-center">
             <hr />
             <span class='absolute -top-[0.80rem] bg-white px-3'>or</span>
           </div>
@@ -70,7 +70,7 @@ export default function CheckoutSummary({
             <input class="w-6" type="checkbox" value="" checked />
             <label class="custom-control-label">I have read the terms and conditions and agree to the sale of my personal information to the highest bidder.</label>
           </div>
-          <button class="border rounded-xl bg-slate-500 w-full h-12 mt-4" disabled>Continue</button>
+          <button class="border rounded-xl bg-faded w-full h-12 mt-4" disabled>Continue</button>
 
           <AccordionGroup allowMultiple={true} allowToggle={true}>
             <Accordion>

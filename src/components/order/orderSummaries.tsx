@@ -65,13 +65,13 @@ export default function OrderSummaries({
   )
 
   return (
-    <div class="grid grid-flow-row md:p-5 bg-gray-100 rounded-md shadow-md border">
-      <div class="block md:flex justify-between mb-4">
+    <div class="grid grid-flow-row bg-gray-100 rounded-md shadow-md border w-11/12 mx-auto">
+      <div class="flex justify-between mb-4">
         <div class="block md:flex items-baseline">
           <h3 class="mb-0 m-3 text-3xl font-bold">Order #{order.orderNumber}</h3>
-          <a class="text-sm text-blue-600" href="#">View invoice <i class="fas fa-long-arrow-right"></i></a>
+          <a class="text-sm text-primary" href="#">View invoice <i class="fas fa-long-arrow-right"></i></a>
         </div>
-        <p class="mb-0 text-slate-800 mt-4 md:mt-0">Order Placed <b>{order.date}</b></p>
+        <p class="mb-0 text-slate-800 mt-4 mr-4">Order Placed <b>{order.date}</b></p>
       </div>
 
       {orderCards}
@@ -86,7 +86,7 @@ export default function OrderSummaries({
         <div class="mt-4 lg:mt-0">
           <h5 class="text-base font-bold">Payment information</h5>
           <div class="flex">
-            <i class="fab fa-cc-visa text-2xl text-blue-600 m-2 mt-1"></i>
+            <i class="fab fa-cc-visa text-2xl text-primary m-2 mt-1"></i>
             <p class="text-sm text-gray-600">
               <b>Ending with {order.payment.cardNumber}</b> <br />
               <small>Expires {order.payment.expiringDate}</small>

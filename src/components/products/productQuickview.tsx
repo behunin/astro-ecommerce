@@ -72,7 +72,7 @@ export default function ProductQuickview({
               </ModalBody>
               <ModalFooter class="flex flex-col gap-3 text-center mt-4">
                 <button class="border rounded-lg w-full h-12 bg-blue-600 text-white font-bold">Add to Bag</button>
-                <a class="text-blue-600" href="#">View full details</a>
+                <a class="text-primary" href="#">View full details</a>
               </ModalFooter>
             </div>
           </div>

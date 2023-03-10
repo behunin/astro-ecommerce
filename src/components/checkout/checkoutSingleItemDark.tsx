@@ -31,10 +31,10 @@ export default function CheckoutSingleItem({
       <div class="absolute right-0">
         <div class="flex gap-3">
           <a class="text-start" href="#">
-            <h6 class="text-blue-600 font-semibold text-sm border-r pr-3">Edit</h6>
+            <h6 class="text-primary font-semibold text-sm border-r pr-3">Edit</h6>
           </a>
           <a class="text-end" href="#">
-            <h6 class="text-blue-600 font-semibold text-sm text-end">Remove</h6>
+            <h6 class="text-primary font-semibold text-sm text-end">Remove</h6>
           </a>
         </div>
       </div>

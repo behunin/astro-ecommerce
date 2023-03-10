@@ -28,7 +28,7 @@ export default function TestimonialsFade({
 
   return (
     <section>
-      <div class="py-5 md:py-0" style={styles.pageHeader}>
+      <div class="py-5 md:py-0 w-4/5 mx-auto" style={styles.pageHeader}>
         <div class="grid grid-flow-row justify-center items-center mx-auto">
           <h1 class="text-white text-center mt-[10%] mb-4 font-bold text-[6rem]">{title}</h1>
           <p class="text-white text-center max-w-lg sm:mb-6 mb-4 mx-auto">{full_description}</p>

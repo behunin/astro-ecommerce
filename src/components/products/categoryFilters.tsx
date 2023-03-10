@@ -9,7 +9,7 @@ export default function ProductOverview({
 }: Props) {
 
   return (
-    <div class="mx-auto">
+    <div class="w-4/5 mx-auto border rounded-lg shadow-lg p-1">
       <div class="border-b pb-8">
         {(title.length != 0) &&
           <h2 class="float-left mb-3">{title}</h2>
