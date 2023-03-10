@@ -1,6 +1,6 @@
-import { useNavContext } from "./navContext";
+import { NavContext } from "./navContext";
 const Navbar = () => {
-  const ctx = useNavContext()
+  const [opened, setOpen] = NavContext
   return (
     <nav
       class="relative flex-auto w-full items-center justify-between bg-neutral-100 py-4 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start"
@@ -9,7 +9,7 @@ const Navbar = () => {
         <button
           class="block border-0 bg-transparent py-2 px-2.5 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
           type="button"
-          onClick={() => ctx.setOpen(!ctx.opened())}
+          onClick={() => setOpen(!opened())}
           aria-controls="navbarSupportedContent1"
           aria-expanded="false"
           aria-label="Toggle navigation">

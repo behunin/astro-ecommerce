@@ -28,7 +28,6 @@ import OrderSummaries from "../components/order/orderSummaries";
 import OrderHistory from "../components/order/orderHistory";
 import IncentiveLarge from "../components/incentives/incentiveLarge";
 import IncentiveCols from "../components/incentives/incentiveCols";
-import { useNavContext } from "../components/navContext";
 
 let cartItems: any[] = [];
 data.shoppingCart.map((id) =>
@@ -78,7 +77,7 @@ data.orders.forEach((order) => {
 <Layout title="Astro Ecommerce">
   <header class="bg-gray-100">
     <Navbar client:load />
-    <NavDrawer client:load />
+    <NavDrawer client:media="(max-width: 425px)" />
   </header>
   <main class="container mx-auto">
     <div class="grid grid-flow-row items-center justify-center">
