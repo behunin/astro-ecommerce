@@ -33,7 +33,7 @@ export default function CheckoutSummary({
   return (
     <section>
       <div class="grid grid-flow-row md:grid-cols-4 gap-3 w-11/12 mx-auto">
-        <div class="grid grid-flow-row gap-4 col-span-2">
+        <div class="grid grid-flow-row gap-4 col-span-2 p-1">
           <small class="text-white opacity-60">Amount due</small>
           <h3 class="text-white">${subtotalCheckout.toFixed(2)}</h3>
           {products.map((product, i) =>
@@ -54,8 +54,8 @@ export default function CheckoutSummary({
             Pay
           </button>
           <div class="my-4 relative text-center">
+            <span class='absolute -top-[0.80rem] left-1/2  bg-white'>or</span>
             <hr />
-            <span class='absolute -top-[0.80rem] bg-white px-3'>or</span>
           </div>
           <h5 class="mb-4 font-bold text-2xl">Contact information</h5>
           <div class="flex flex-col gap-1">

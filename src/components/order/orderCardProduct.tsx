@@ -68,39 +68,39 @@ export default function OrderCardProduct({
           <a class="text-sm text-primary font-bold" href="#">Edit</a>
         </div>
       </div>
-      <div class="hidden md:block mt-4">
+      <div class="mt-4">
         <h6 class='font-bold mb-3'>Preparing to ship on March 24, 2021</h6>
-        <div class="progress">
+        <div class="hidden md:block progress">
           <span class={widthClass}></span>
         </div>
         <div class="block md:flex justify-between">
           <p class="font-semibold text-primary">Order placed</p>
           {status == "Order Placed" &&
             <>
-              <p class="font-semibold">Processed</p>
-              <p class="font-semibold">Shipped</p>
-              <p class="font-semibold">Delivered</p>
+              <p class="font-semibold text-faded opacity-20">Processed</p>
+              <p class="font-semibold text-faded opacity-20">Shipped</p>
+              <p class="font-semibold text-faded opacity-20">Delivered</p>
             </>
           }
           {status == "Processed" &&
             <>
-              <p class="font-semibold text-primary">Processed</p>
-              <p class="font-semibold">Shipped</p>
-              <p class="font-semibold">Delivered</p>
+              <p class="font-semibold text-secondary">Processed</p>
+              <p class="font-semibold text-faded opacity-20">Shipped</p>
+              <p class="font-semibold text-faded opacity-20">Delivered</p>
             </>
           }
           {status == "Shipped" &&
             <>
-              <p class="font-semibold text-primary">Processed</p>
-              <p class="font-semibold text-primary">Shipped</p>
-              <p class="font-semibold">Delivered</p>
+              <p class="font-semibold text-secondary">Processed</p>
+              <p class="font-semibold text-warning">Shipped</p>
+              <p class="font-semibold text-faded opacity-20">Delivered</p>
             </>
           }
           {status == "Delivered" &&
             <>
-              <p class="font-semibold text-primary">Processed</p>
-              <p class="font-semibold text-primary">Shipped</p>
-              <p class="font-semibold text-primary">Delivered</p>
+              <p class="font-semibold text-secondary">Processed</p>
+              <p class="font-semibold text-info">Shipped</p>
+              <p class="font-semibold text-success">Delivered</p>
             </>
           }
         </div>

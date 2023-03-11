@@ -9,7 +9,7 @@ module.exports = {
 				par: "#1e293b",
 				accent: "#67cba0",
 				faded: "#6b7280",
-				info: "#2563eb",
+				info: "#eab308",
 				success: "#16a34a",
 				warning: "#d97706",
 				error: "#dc2626",

@@ -34,7 +34,7 @@ export default function TestimonialsFade({
       </div>
       <div class="container">
         <h4 class="font-black mt-4 mb-5">What are people saying?</h4>
-        <div class="grid grid-flow-col">
+        <div class="grid grid-flow-row md:grid-flow-col">
           <figure>
             <svg class="opacity-20 mb-4" width="40px" height="40px" viewBox="0 0 270 270" version="1.1" xmlns="http://www.w3.org/2000/svg">
               <title>quote-down</title>

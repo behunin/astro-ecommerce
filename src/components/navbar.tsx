@@ -3,8 +3,7 @@ const Navbar = () => {
   const [opened, setOpen] = NavContext
   return (
     <nav
-      class="relative flex-auto w-full items-center justify-between bg-neutral-100 py-4 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start"
-      data-te-navbar-ref>
+      class="relative flex-auto w-full items-center justify-between bg-neutral-100 py-4 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start">
       <div class="flex w-full flex-wrap items-center justify-between px-6">
         <button
           class="block border-0 bg-transparent py-2 px-2.5 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
@@ -40,9 +39,8 @@ const Navbar = () => {
               loading="lazy" />
           </a>
           <ul
-            class="list-style-none mr-auto flex flex-col pl-0 lg:flex-row"
-            data-te-navbar-nav-ref>
-            <li class="lg:pr-2" data-te-nav-item-ref>
+            class="list-style-none mr-auto flex flex-col pl-0 lg:flex-row">
+            <li class="lg:pr-2">
               <a
                 class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-zinc-400"
                 href="/astro-ecommerce/landing/"
@@ -50,19 +48,17 @@ const Navbar = () => {
               >Landing</a
               >
             </li>
-            <li class="lg:pr-2" data-te-nav-item-ref>
+            <li class="lg:pr-2">
               <a
                 class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
                 href="/astro-ecommerce/shopping-cart/"
-                data-te-nav-link-ref
               >Shopping-Cart</a
               >
             </li>
-            <li class="lg:pr-2" data-te-nav-item-ref>
+            <li class="lg:pr-2">
               <a
                 class="text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 lg:px-2 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
                 href="/astro-ecommerce/product/"
-                data-te-nav-link-ref
               >Products</a
               >
             </li>
@@ -83,13 +79,12 @@ const Navbar = () => {
               </svg>
             </span>
           </a>
-          <div class="relative" data-te-dropdown-ref>
+          <div class="relative">
             <a
               class="hidden-arrow mr-4 flex items-center text-neutral-500 hover:text-neutral-700 focus:text-neutral-700 disabled:text-black/30 dark:text-neutral-200 dark:hover:text-neutral-300 dark:focus:text-neutral-300 [&.active]:text-black/90 dark:[&.active]:text-neutral-400"
               href="#"
               id="dropdownMenuButton1"
               role="button"
-              data-te-dropdown-toggle-ref
               aria-expanded="false">
               <span class="[&>svg]:w-5">
                 <svg
@@ -110,13 +105,11 @@ const Navbar = () => {
             </a>
             <ul
               class="absolute left-auto right-0 z-[1000] float-left m-0 mt-1 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
-              aria-labelledby="dropdownMenuButton1"
-              data-te-dropdown-menu-ref>
+              aria-labelledby="dropdownMenuButton1">
               <li>
                 <a
                   class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
                   href="#"
-                  data-te-dropdown-item-ref
                 >Action</a
                 >
               </li>
@@ -124,7 +117,6 @@ const Navbar = () => {
                 <a
                   class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
                   href="#"
-                  data-te-dropdown-item-ref
                 >Another action</a
                 >
               </li>
@@ -132,7 +124,6 @@ const Navbar = () => {
                 <a
                   class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
                   href="#"
-                  data-te-dropdown-item-ref
                 >Something else here</a
                 >
               </li>
@@ -144,7 +135,6 @@ const Navbar = () => {
               href="#"
               id="dropdownMenuButton2"
               role="button"
-              data-te-dropdown-toggle-ref
               aria-expanded="false">
               <img
                 src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg"
@@ -155,13 +145,11 @@ const Navbar = () => {
             </a>
             <ul
               class="absolute left-auto right-0 z-[1000] float-left m-0 mt-1 hidden min-w-max list-none overflow-hidden rounded-lg border-none bg-white bg-clip-padding text-left text-base shadow-lg dark:bg-neutral-700 [&[data-te-dropdown-show]]:block"
-              aria-labelledby="dropdownMenuButton2"
-              data-te-dropdown-menu-ref>
+              aria-labelledby="dropdownMenuButton2">
               <li>
                 <a
                   class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
                   href="#"
-                  data-te-dropdown-item-ref
                 >Action</a
                 >
               </li>
@@ -169,7 +157,6 @@ const Navbar = () => {
                 <a
                   class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
                   href="#"
-                  data-te-dropdown-item-ref
                 >Another action</a
                 >
               </li>
@@ -177,7 +164,6 @@ const Navbar = () => {
                 <a
                   class="block w-full whitespace-nowrap bg-transparent py-2 px-4 text-sm font-normal text-neutral-700 hover:bg-neutral-100 active:text-neutral-800 active:no-underline disabled:pointer-events-none disabled:bg-transparent disabled:text-neutral-400 dark:text-neutral-200 dark:hover:bg-white/30"
                   href="#"
-                  data-te-dropdown-item-ref
                 >Something else here</a
                 >
               </li>
