@@ -28,7 +28,7 @@ export default function CardProduct({
         <img class="aspect-square max-h-80 rounded object-cover" src={thumb_src} alt={thumb_alt} />
         <div class="grid grid-flow-row items-center justify-center text-center">
           {(color) &&
-            <p class="text-sm mb-1 text-faded">{color}</p>
+            <p class="text-sm mb-1 text-fade dark:text-faded">{color}</p>
           }
           {(title) &&
             <h5 class="font-bold">
@@ -41,7 +41,7 @@ export default function CardProduct({
           }
 
           {(price) &&
-            <p class="text-sm text-faded dark:text-par mt-1 mb-3">
+            <p class="text-sm text-fade dark:text-faded mt-1 mb-3">
               ${price.toFixed(2)}
             </p>
           }
@@ -51,7 +51,7 @@ export default function CardProduct({
           }
 
           {!(description || colors || color) &&
-            <a href="#" class="font-normal text-par text-sm">Shop Now</a>
+            <a href="#" class="font-normal text-par dark:text-faded text-sm">Shop Now</a>
           }
         </div>
       </a>

@@ -33,7 +33,7 @@ export default function TestimonialsFade({
       <div class="py-5 md:py-0 w-4/5 mx-auto" style={styles.pageHeader}>
         <div class="grid grid-flow-row justify-center items-center mx-auto">
           <h1 class="title text-white text-center mt-[10%] mb-4 font-bold">{title}</h1>
-          <p class="text-white text-center max-w-lg sm:mb-6 mb-4 mx-auto">{full_description}</p>
+          <p class="text-white dark:text-faded text-center max-w-lg sm:mb-6 mb-4 mx-auto">{full_description}</p>
           <div class="w-full">
             <button class="block border rounded bg-white w-40 h-12 mx-auto">Show new arrivals</button>
           </div>

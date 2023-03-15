@@ -13,7 +13,7 @@ export default function ProductAccordion({
       <div class="md:w-50">
         <div class="p-3 border-t">
           <h6><b>{title}</b></h6>
-          <p class="text-slate-500">{value}</p>
+          <p class="text-fade dark:text-faded">{value}</p>
         </div>
       </div>
     )

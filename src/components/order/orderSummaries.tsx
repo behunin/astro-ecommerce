@@ -65,7 +65,7 @@ export default function OrderSummaries({
   )
 
   return (
-    <div class="grid grid-flow-row bg-gray-100 rounded-md shadow-md border w-11/12 mx-auto">
+    <div class="grid grid-flow-row bg-gray-100 dark:bg-faded rounded-md shadow-md border w-11/12 mx-auto">
       <div class="flex justify-between mb-4">
         <div class="block md:flex items-baseline">
           <h3 class="mb-0 m-3 text-3xl font-bold">Order #{order.orderNumber}</h3>

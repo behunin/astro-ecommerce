@@ -26,7 +26,7 @@ export default function ProductOverview({
             <h2 class="mb-3 font-bold text-2xl">{title}</h2>
           }
           {(full_description.length != 0) &&
-            <p class="mb-5 text-slate-500">{full_description}</p>
+            <p class="mb-5 text-fade dark:text-faded">{full_description}</p>
           }
 
           <div class="grid grid-cols-2 gap-6">

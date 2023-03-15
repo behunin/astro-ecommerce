@@ -11,7 +11,7 @@ export default function incentiveLarge({
     <div class="w-4/5 mx-auto">
       <h2 class='text-5xl font-bold'>We build our business on customer service</h2>
       <p> It’s like a little kid, a little boy, looking at colors, and no one told him what colors are good, before somebody tells you you shouldn’t like pink because that’s for girls, or you’d instantly become a gay two-year-old. Why would anyone pick blue over pink? Pink is obviously a better color.</p>
-      <div class="grid grid-flow-row md:grid-flow-col gap-3 text-gray-600 mt-5">
+      <div class="grid grid-flow-row md:grid-flow-col gap-3 text-fade dark:text-faded mt-5">
         <div>
           <i class="fas fa-shipping-fast text-5xl mb-4"></i>
           <h6 class="text-sm font-bold">Free Shipping</h6>

@@ -61,7 +61,7 @@ export default function OrderHistoryCard({
 
   return (
     <section>
-      <div class="bg-neutral-100 rounded-xl mt-5 mb-4">
+      <div class="bg-neutral-100 dark:bg-par rounded-xl mt-5 mb-4">
         <div class="flex justify-between items-center rounded-xl">
           <div class="block md:flex">
             <div class="flex md:block justify-between p-4 md:m-4">
@@ -184,10 +184,10 @@ export default function OrderHistoryCard({
         <table class="w-full">
           <thead>
             <tr>
-              <th scope="col" class="text-faded text-xs font-semibold opacity-70 px-2 text-start">Product</th>
-              <th scope="col" class="text-faded text-xs font-semibold opacity-70 px-2 text-start">Price</th>
-              <th scope="col" class="text-faded text-xs font-semibold opacity-70 px-2 text-start">Status</th>
-              <th scope="col" class="text-faded text-xs font-semibold opacity-70 px-2 text-end">Info</th>
+              <th scope="col" class="text-fade dark:text-faded text-xs font-semibold opacity-70 px-2 text-start">Product</th>
+              <th scope="col" class="text-fade dark:text-faded text-xs font-semibold opacity-70 px-2 text-start">Price</th>
+              <th scope="col" class="text-fade dark:text-faded text-xs font-semibold opacity-70 px-2 text-start">Status</th>
+              <th scope="col" class="text-fade dark:text-faded text-xs font-semibold opacity-70 px-2 text-end">Info</th>
             </tr>
           </thead>
           <tbody>
