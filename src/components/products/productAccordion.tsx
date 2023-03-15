@@ -19,7 +19,7 @@ export default function ProductAccordion({
           {(item) => (
             <Accordion>
               <AccordionHeader><b>{item[0]}</b></AccordionHeader>
-              <p>{item[1]}</p>
+              <p class='dark:text-faded'>{item[1]}</p>
             </Accordion>
           )}
         </For>

@@ -37,11 +37,11 @@ export default function CardProduct({
           }
 
           {(description) &&
-            <p class="text-par text-sm w-4/5 mx-auto">{description}</p>
+            <p class="text-par dark:text-back text-sm w-4/5 mx-auto">{description}</p>
           }
 
           {(price) &&
-            <p class="text-sm text-faded mt-1 mb-3">
+            <p class="text-sm text-faded dark:text-par mt-1 mb-3">
               ${price.toFixed(2)}
             </p>
           }

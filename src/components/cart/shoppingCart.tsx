@@ -49,7 +49,7 @@ export default function ShoppingCart({
 
         </div>
         <div class="mt-5 lg:mt-0 relative md:sticky mx-auto md:top-1/4 md:right-8">
-          <div class="grid shadow-md border bg-gray-100">
+          <div class="grid shadow-md border rounded-lg bg-gray-100">
             <div class="lg:p-5">
               <h5 class="mb-4"><b>Order Summary</b></h5>
               <OrderSummary

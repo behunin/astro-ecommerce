@@ -40,15 +40,15 @@ export default function ProductOverview({
       <div class="grid grid-flow-row sm:grid-flow-col gap-3 items-center justify-evenly mt-5 w-4/5 mx-auto">
         <div class="border-end">
           {(title.length != 0) &&
-            <h2><b>{title}</b></h2>
+            <h2 class='dark:text-faded'><b>{title}</b></h2>
           }
           {(full_description.length != 0) &&
-            <p>{full_description}</p>
+            <p class='dark:text-faded'>{full_description}</p>
           }
           {(highlights.length != 0) &&
             <>
-              <h6>Highlights</h6>
-              <ul class="text-sm">
+              <h6 class='dark:text-faded'>Highlights</h6>
+              <ul class="text-sm dark:text-faded">
                 {highlights.map(highlight =>
                   <li class="mb-2">{highlight}</li>
                 )}
@@ -57,8 +57,8 @@ export default function ProductOverview({
           }
           {(details.length != 0) &&
             <>
-              <h6><b>Details</b></h6>
-              <p>{details}</p>
+              <h6 class='dark:text-faded'><b>Details</b></h6>
+              <p class='dark:text-faded'>{details}</p>
             </>
           }
 

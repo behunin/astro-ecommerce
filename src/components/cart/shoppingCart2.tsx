@@ -47,7 +47,7 @@ export default function ShoppingCart({
           )}
         </div>
         <div class="mx-auto mt-4" style={{ width: "inherit" }}>
-          <div class="shadow-sm border bg-gray-100">
+          <div class="shadow-sm border rounded-lg bg-gray-100">
             <div class="lg:p-5">
               <OrderSummary
                 subtotal={subtotal}

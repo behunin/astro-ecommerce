@@ -1,45 +1,69 @@
 export default function UpperNavbar() {
+  let themeToggleDarkIcon: SVGSVGElement;
+  let themeToggleLightIcon: SVGSVGElement;
+
+  function toggle() {
+
+    // toggle icons inside button
+    themeToggleDarkIcon.classList.toggle('hidden');
+    themeToggleLightIcon.classList.toggle('hidden');
+
+
+    const theme = localStorage.getItem('color-theme');
+    if (null === theme) { // if NOT set via local storage previously
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      }
+    } else { // if set via local storage previously
+      if (theme === 'light') {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-theme', 'light');
+      }
+    }
+  }
+
   return (
-    <div class="w-full h-12 bg-slate-900">
-      <div class="container">
-        <ul class="hidden">
-          <li class="nav-item dropdown p-2">
-            <a href="javascript:;" class="nav-link dropdown-toggle text-white p-0" id="dropdownCurrency" data-bs-toggle="dropdown" aria-expanded="false">
-              CAD
+    <div class="w-full h-auto grid grid-flow-col items-center justify-between bg-slate-900">
+      <select class="p-4 bg-transparent active:text-black text-white">
+        <option value="cad">
+          CAD
+        </option>
+        <option value="eur">
+          EUR
+        </option>
+        <option value="usd">
+          USD
+        </option>
+        <option value="ron">
+          RON
+        </option>
+      </select>
+      <div>
+        <button id="theme-toggle" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5" onClick={() => toggle()}>
+          <svg ref={themeToggleDarkIcon} id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+          <svg ref={themeToggleLightIcon} id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </button>
+      </div>
+      <div class="float-right">
+        <ul class="flex flex-row gap-4 items-center pr-4">
+          <li class="rounded-md">
+            <a href="#" class="text-white text-base">
+              Sign In
             </a>
-            <ul class="dropdown-menu position-absolute px-2 py-3" aria-labelledby="dropdownCurrency" data-bs-popper="static">
-              <li class="mb-2">
-                <a class="dropdown-item rounded-md" href="javascript:;">
-                  <p class="mb-0">EUR</p>
-                </a>
-              </li>
-              <li class="mb-2">
-                <a class="dropdown-item rounded-md" href="javascript:;">
-                  <p class="mb-0">USD</p>
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item rounded-md" href="javascript:;">
-                  <p class="mb-0">RON</p>
-                </a>
-              </li>
-            </ul>
+          </li>
+          <li class="rounded-md">
+            <a href="#" class="text-white text-base">
+              Create an account
+            </a>
           </li>
         </ul>
-        <div class="float-right flex items-center">
-          <ul class="navbar-nav hidden lg:flex flex-row">
-            <li class="nav-item px-3 py-3 rounded-sm flex file:items-center">
-              <a href="#" class="nav-link text-white p-0 text-sm">
-                Sign In
-              </a>
-            </li>
-            <li class="nav-item px-3 py-3 rounded-sm flex items-center">
-              <a href="#" class="nav-link text-white p-0 text-sm">
-                Create an account
-              </a>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
   );

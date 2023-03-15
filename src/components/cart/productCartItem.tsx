@@ -44,10 +44,10 @@ export default function CartItem({
           }
         </div>
       </div>
-      <div class="w-20 md:w-10 mt-4 md:mt-0">
-        <input type="number" min={0} class="border max-w-[32px]" placeholder="1" aria-label="amount" />
+      <div class="grid items-center mt-4 md:mt-0">
+        <input type="number" min={0} class="border rounded-md max-w-[52px] placeholder:px-3 pl-1" placeholder="1" aria-label="amount" />
       </div>
-      <div class="w-10 text-end">
+      <div class="w-12 text-end">
         <a href="#">
           <i class="fas fa-times mx-3"></i>
         </a>

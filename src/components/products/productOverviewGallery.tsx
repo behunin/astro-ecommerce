@@ -29,13 +29,13 @@ export default function productOverviewGallery({
 }: Props) {
 
   return (
-    <div class="grid grid-flow-row md:grid-flow-col gap-3 items-center justify-evenly w-4/5 mx-auto shadow-lg border">
+    <div class="grid grid-flow-row md:grid-flow-col gap-3 items-center justify-evenly w-4/5 mx-auto shadow-lg border rounded-lg p-4">
       {(images.length != 0) &&
         <ProductImages images={images} />
       }
       <div class="mt-5 lg:mt-0">
         {(title.length != 0) &&
-          <h2>{title}</h2>
+          <h2 class='dark:text-faded'>{title}</h2>
         }
         {(price != 0) &&
           <>
@@ -48,7 +48,7 @@ export default function productOverviewGallery({
         {(rating != 0) &&
           <ProductRating rating={rating} reviews={reviews} />
         }
-        <p class="mt-4">{full_description}</p>
+        <p class="mt-4 dark:text-faded">{full_description}</p>
         {(colors.length != 0) &&
           <>
             <h6 class="mt-4">Color:</h6>
@@ -59,7 +59,7 @@ export default function productOverviewGallery({
         }
 
         <div class="flex items-center mt-4">
-          <button class="btn btn-primary btn-lg m-4">Add to Bag</button>
+          <button class="border rounded-lg text-black w-40 h-10 dark:text-secondary m-4">Add to Bag</button>
           <a href="#favorite">
             <i id="heart1" class="far fa-heart text-2xl" ></i>
           </a>
