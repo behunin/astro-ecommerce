@@ -65,16 +65,6 @@ data.orders.forEach((order) => {
 });
 ---
 
-<script>
-  function toggleHeart(e: Event) {
-    e.target?.classList.toggle("fas");
-    e.target?.classList.toggle("far");
-    e.target?.classList.toggle("text-danger");
-  }
-
-  document.getElementById("heart1")?.addEventListener("click", toggleHeart);
-</script>
-
 <Layout title="Astro Ecommerce">
   <header class="bg-gray-100">
     <UpperNavbar client:load />
@@ -84,7 +74,7 @@ data.orders.forEach((order) => {
   <main class="container mx-auto">
     <div class="grid grid-flow-row items-center justify-center">
       <div
-        class="flex flex-col md:flex-row flex-shrink gap-3 items-top justify-center mx-auto"
+        class="flex flex-col md:flex-row flex-shrink gap-3 items-top justify-center mt-3 mx-auto"
       >
         {
           data.products.map((product) => (
@@ -135,7 +125,7 @@ data.orders.forEach((order) => {
         }
       </div>
 
-      <div class="my-10 mx-auto">
+      <div class="my-10">
         <ProductOverviewGrid
           colors={data.products[0].colors!}
           images={data.products[0].images!}

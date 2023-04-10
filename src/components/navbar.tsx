@@ -1,5 +1,5 @@
 import { NavContext } from "./navContext";
-const Navbar = () => {
+export default function Navbar() {
   const [opened, setOpen] = NavContext
   return (
     <nav
@@ -174,5 +174,3 @@ const Navbar = () => {
     </nav>
   );
 };
-
-export default Navbar;

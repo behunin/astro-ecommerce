@@ -27,11 +27,9 @@ export default function ProductRating({
   }
 
   return (
-    <>
-      <div class="flex flex-row items-center">
-        {ratingStar}
-        <a href="#" class="text-xs font-medium text-blue-500 px-3">{reviews} reviews</a>
-      </div>
-    </>
+    <div class="flex flex-row items-center">
+      {ratingStar}
+      <a href="#" class="text-xs font-medium text-blue-500 px-3">{reviews} reviews</a>
+    </div>
   );
 }

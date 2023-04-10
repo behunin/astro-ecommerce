@@ -6,9 +6,7 @@ export default function ProductBadge({
   colors,
 }: Props) {
   return (
-    <>
-      <div>{colors.map(color => badge(color))}</div>
-    </>
+    <div>{colors.map(color => badge(color))}</div>
   );
 }
 
