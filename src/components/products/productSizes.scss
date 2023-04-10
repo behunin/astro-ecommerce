@@ -67,16 +67,11 @@
     /* this switch is selected */
     &:has(:checked) {
         color: white;
+        background: gray;
     }
 
     &:checked>p {
         color: white;
-    }
-
-    /* stylish hover/selected background */
-    &:has(:checked),
-    &:hover {
-        background: gray;
     }
 
     /* all direct children pile into the single grid cell */

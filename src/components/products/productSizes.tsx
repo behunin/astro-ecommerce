@@ -29,9 +29,9 @@ export default function ProductSizes({
               </div>
               :
               <div class="group-switch">
-                <input disabled type="radio" name="text-alignment" id={`text-left-${i}`} value={size} />
+                <input disabled type="radio" name="text-alignment" id={`text-left-${i}`} />
                 <label for="text-left">{size}</label>
-                <p class='select-none text-faded'>{size}</p>
+                <p class='select-none text-faded dark:text-gray-900 dark:opacity-10'>{size}</p>
               </div>
             }
           </>
