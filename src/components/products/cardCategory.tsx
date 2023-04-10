@@ -12,7 +12,7 @@ export default function CardProduct({
 }: Props) {
 
   return (
-    <a href="#">
+    <a href="#" class="flex-shrink">
       <div class={`outline-1 rounded grid grid-flow-row items-center mb-4 lg:mb-0 ${classList}`}
         style={{ "background-image": `url(${thumb_src})`, "background-size": 'cover', "background-color": "gray", "background-blend-mode": "multiply" }}>
         <div class="text-center">

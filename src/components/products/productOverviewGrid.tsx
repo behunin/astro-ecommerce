@@ -37,8 +37,8 @@ export default function ProductOverview({
       {(images.length != 0) &&
         <ProductGallery images={images} />
       }
-      <div class="grid grid-flow-row sm:grid-flow-col gap-3 items-center justify-evenly mt-5 mx-auto">
-        <div class="border-end">
+      <div class="grid grid-flow-row sm:grid-flow-col gap-3 items-center justify-evenly mt-5 mx-auto w-4/5">
+        <div>
           {(title.length != 0) &&
             <h2 class='dark:text-faded px-1'><b>{title}</b></h2>
           }
