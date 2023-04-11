@@ -74,7 +74,7 @@ data.orders.forEach((order) => {
   <main class="container mx-auto">
     <div class="grid grid-flow-row items-center justify-center">
       <div
-        class="flex flex-col md:flex-row flex-shrink gap-3 items-top justify-center mt-3 mx-auto"
+        class="flex flex-col md:flex-row gap-3 items-top justify-center mt-3 mx-auto"
       >
         {
           data.products.map((product) => (
@@ -112,12 +112,12 @@ data.orders.forEach((order) => {
       </div>
 
       <div
-        class="flex flex-col md:flex-row gap-3 items-center justify-center mb-5 mx-auto w-4/5"
+        class="flex flex-col md:flex-row gap-3 items-center justify-center mb-5 mx-auto w-full"
       >
         {
           data.categories.map((category) => (
             <CardCategory
-              classList="h-80 aspect-square"
+              classList="aspect-square"
               thumb_src={category.thumb_src}
               title={category.title}
             />

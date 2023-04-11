@@ -23,9 +23,9 @@ export default function CardProduct({
 }: Props) {
 
   return (
-    <div class="shadow-md border rounded mb-5 max-w-xs">
-      <a href="#">
-        <img class="aspect-square max-h-80 rounded object-cover" src={thumb_src} alt={thumb_alt} />
+    <div class="shrink shadow-md border rounded mb-5">
+      <a class='flex flex-row md:flex-col' href="#">
+        <img class="max-h-80 rounded object-scale-down object-center" src={thumb_src} alt={thumb_alt} />
         <div class="grid grid-flow-row items-center justify-center text-center">
           {(color) &&
             <p class="text-sm mb-1 text-fade dark:text-faded">{color}</p>
