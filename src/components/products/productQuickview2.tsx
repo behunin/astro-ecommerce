@@ -36,10 +36,10 @@ export default function ProductQuickview({
         <ModalOverlay />
         <ModalContent >
           <ModalCloseButton />
-          <ModalBody class="grid grid-flow-row md:grid-flow-col items-center justify-center w-full gap-3 lg:w-70 mt-5 lg:mt-0">
+          <ModalBody class="grid grid-flow-row md:grid-flow-col items-center justify-center w-full gap-3 lg:w-70 mt-4 lg:mt-0 p-1">
             <div class='grid items-center justify-center mt-4'>
               {(thumb_src) &&
-                <img class="object-cover rounded shadow-sm border mb-4 w-20" src={thumb_src} />
+                <img class="rounded shadow-sm border" src={thumb_src} />
               }
               <a class="text-primary mb-4" href="#">View full details</a>
             </div>

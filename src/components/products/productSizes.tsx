@@ -11,7 +11,7 @@ export default function ProductSizes({
   const sizeID = Date.now();
 
   return (
-    <>
+    <div>
       <div class="mt-4 flex justify-between items-center">
         <h6 class="mb-0"><b>Size:</b></h6>
         <a href="#" class="text-primary mb-0">Size guide</a>
@@ -37,6 +37,6 @@ export default function ProductSizes({
           </>
         )}
       </fieldset>
-    </>
+    </div>
   );
 }

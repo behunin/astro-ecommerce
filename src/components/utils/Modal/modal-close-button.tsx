@@ -28,7 +28,7 @@ export function ModalCloseButton() {
   return (
     <button
       aria-label="Close modal"
-      class="fa fa-close absolute top-4 right-6 rounded w-max"
+      class="fa fa-close absolute top-8 right-6 rounded w-max z-50"
       onClick={() => modalContext.onClose()}
     />
   );

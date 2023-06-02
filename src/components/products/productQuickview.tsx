@@ -27,8 +27,6 @@ export default function ProductQuickview({
 
   const [opened, setOpen] = createSignal(false);
 
-  createEffect(() => console.log("MODAL:", opened()));
-
   return (
     <div>
       <button class="border rounded-xl w-40 h-12 bg-gray-800 text-white" onClick={() => setOpen(true)}>
@@ -38,9 +36,11 @@ export default function ProductQuickview({
         <ModalOverlay />
         <ModalContent>
           <ModalCloseButton />
-          <div class="flex-auto gap-3 p-4">
+          <div class="flex-auto gap-3 p-1 w-[inherit]">
             {(thumb_src) &&
-              <img class="object-contain rounded-2xl shadow-sm border mb-4 md:mb-0" src={thumb_src} />
+              <div>
+                <img class="rounded-2xl shadow-sm border mb-4 md:mb-0" src={thumb_src} />
+              </div>
             }
             <div>
               <ModalHeader>
@@ -48,7 +48,7 @@ export default function ProductQuickview({
                   <h4 class="mb-0"><b>{title}</b></h4>
                 }
               </ModalHeader>
-              <ModalBody class="w-full md:mt-5 lg:mt-0">
+              <ModalBody class="w-full md:mt-5 lg:mt-0 p-1">
                 {(price) &&
                   <div class="flex mb-3">
                     <h6><b>${price.toFixed(2)}</b></h6>
