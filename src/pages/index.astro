@@ -69,7 +69,7 @@ data.orders.forEach((order) => {
   <header class="bg-gray-100">
     <UpperNavbar client:load />
     <Navbar client:load />
-    <NavDrawer client:media="(max-width: 425px)" />
+    <NavDrawer client:only />
   </header>
   <main class="container mx-auto">
     <div class="grid grid-flow-row items-center justify-center">

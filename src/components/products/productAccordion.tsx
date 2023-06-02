@@ -1,6 +1,5 @@
 import { For } from 'solid-js';
 import { Accordion, AccordionGroup, AccordionHeader } from '../utils/Accordian/Accordian';
-import "./productAccordian.css"
 
 interface Props {
   data: object

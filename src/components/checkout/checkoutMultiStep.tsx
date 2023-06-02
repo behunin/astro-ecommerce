@@ -54,8 +54,7 @@ export default function CheckoutSummary({
             Pay
           </button>
           <div class="my-4 relative text-center">
-            <span class='absolute -top-[0.80rem] left-1/2  bg-white'>or</span>
-            <hr />
+            <span class='absolute -top-[0.80rem] left-1/2  bg-inherit'>or</span>
           </div>
           <h5 class="mb-4 font-bold text-2xl">Contact information</h5>
           <div class="flex flex-col gap-1">

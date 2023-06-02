@@ -8,7 +8,7 @@ export default function Navbar() {
         <button
           class="block border-0 bg-transparent py-2 px-2.5 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
           type="button"
-          onClick={() => setOpen(!opened())}
+          onClick={() => setOpen(true)}
           aria-controls="navbarSupportedContent1"
           aria-expanded="false"
           aria-label="Toggle navigation">

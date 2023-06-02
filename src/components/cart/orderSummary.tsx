@@ -11,7 +11,7 @@ export default function OrderSummary({
   let sum = 0;
   sum += subtotal;
   return (
-    <div class="min-w-[15rem]">
+    <div class="min-w-[15rem] p-1">
       <ul class="list-none">
         <li class="border-b mt-3">
           <div class="flex justify-between">

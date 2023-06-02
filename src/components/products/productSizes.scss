@@ -20,7 +20,7 @@
 
     /* change box-shadow when focus is inside */
     &:is(:focus-within, :hover) {
-        box-shadow: inset 3px 3px gray;
+        box-shadow: inset 0 0 gray;
     }
 
     /* legend is useful to AT's but not our visible UI */
